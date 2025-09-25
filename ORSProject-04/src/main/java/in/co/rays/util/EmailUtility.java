@@ -16,9 +16,9 @@ import in.co.rays.exception.ApplicationException;
 /**
  * Email Utility provides Email Services
  *
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
- * @Copyright (c) Vedik Vishwakarma
+ * @Copyright (c) vedik vishwakarma
  *
  */
 public class EmailUtility {

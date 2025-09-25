@@ -30,7 +30,7 @@ import in.co.rays.util.ServletUtility;
  * Performs validation, preloading of course and subject lists and manages
  * timetable CRUD.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "TimetableCtl", urlPatterns = { "/ctl/TimetableCtl" })
 public class TimetableCtl extends BaseCtl {

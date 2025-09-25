@@ -22,7 +22,7 @@ import in.co.rays.util.ServletUtility;
  * CollegeListCtl servlet class to handle operations like searching, listing,
  * deleting, and paginating College records.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "CollegeListCtl", urlPatterns = "/ctl/CollegeListCtl")
 public class CollegeListCtl extends BaseCtl {

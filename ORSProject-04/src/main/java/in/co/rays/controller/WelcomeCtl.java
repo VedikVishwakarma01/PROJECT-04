@@ -16,7 +16,7 @@ import in.co.rays.util.ServletUtility;
  * Welcome view. It handles HTTP GET requests and directs users to the welcome
  * page.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "WelcomeCtl", urlPatterns = { "/WelcomeCtl" })
 public class WelcomeCtl extends BaseCtl {

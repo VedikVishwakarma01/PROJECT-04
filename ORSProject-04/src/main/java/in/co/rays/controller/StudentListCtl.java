@@ -22,7 +22,7 @@ import in.co.rays.util.ServletUtility;
  * Student List Controller. Handles search, pagination, deletion, and
  * redirection operations for student list view.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "StudentListCtl", urlPatterns = { "/ctl/StudentListCtl" })
 public class StudentListCtl extends BaseCtl {

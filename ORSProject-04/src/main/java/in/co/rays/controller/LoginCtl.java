@@ -25,7 +25,7 @@ import in.co.rays.util.ServletUtility;
  * Controller to handle Login and Logout functionality. Handles user
  * authentication and session management.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "LoginCtl", urlPatterns = { "/LoginCtl" })
 public class LoginCtl extends BaseCtl {
@@ -130,7 +130,7 @@ public class LoginCtl extends BaseCtl {
 
 		HttpSession session = request.getSession();
 
-		String op = request.getParameter("operation");
+		String op = DataUtility.getString(request.getParameter("operation"));
 
 		UserModel model = new UserModel();
 		RoleModel role = new RoleModel();
@@ -142,6 +142,7 @@ public class LoginCtl extends BaseCtl {
 
 				if (bean != null) {
 					session.setAttribute("user", bean);
+					
 					RoleBean roleBean = role.findByPk(bean.getRoleId());
 
 					if (roleBean != null) {

@@ -19,7 +19,7 @@ import in.co.rays.util.JDBCDataSource;
  * StudentModel handles database operations for Student records. It includes
  * methods for CRUD operations and search functionality.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class StudentModel {
 

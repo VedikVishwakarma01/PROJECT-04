@@ -26,7 +26,7 @@ import in.co.rays.util.ServletUtility;
  * Controller to handle operations related to Marksheet. Includes adding,
  * updating, validating and viewing marksheet data.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "MarksheetCtl", urlPatterns = { "/ctl/MarksheetCtl" })
 public class MarksheetCtl extends BaseCtl {

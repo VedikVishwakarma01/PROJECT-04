@@ -36,8 +36,8 @@ public class TestStudentModel {
 		bean.setMobileNo("7986594955");
 		bean.setEmail("akbar@gmail.com");
 		bean.setCollegeId(3);
-		bean.setCreatedBy("chetan@gmail.com");
-		bean.setModifiedBy("chetan@gmail.com");
+		bean.setCreatedBy("vedik vishwakarma@gmail.com");
+		bean.setModifiedBy("vedik vishwakarma@gmail.com");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 
@@ -58,8 +58,8 @@ public class TestStudentModel {
 		bean.setMobileNo("9326599495");
 		bean.setEmail("aastik@gmail.com");
 		bean.setCollegeId(2);
-		bean.setCreatedBy("chetan@gmail.com");
-		bean.setModifiedBy("chetan@gmail.com");
+		bean.setCreatedBy("vedik vishwakarma@gmail.com");
+		bean.setModifiedBy("vedik vishwakarma@gmail.com");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 

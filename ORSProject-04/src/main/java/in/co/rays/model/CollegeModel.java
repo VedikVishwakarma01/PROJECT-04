@@ -18,7 +18,7 @@ import in.co.rays.util.JDBCDataSource;
  * Model class for College entity that handles JDBC operations such as add,
  * update, delete, find, and search on the st_college table.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class CollegeModel {
 

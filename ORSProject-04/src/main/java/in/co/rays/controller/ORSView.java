@@ -3,8 +3,8 @@ package in.co.rays.controller;
 /**
  * Contains ORS View and Controller URI
  * 
- * @author Vedik Vishwakarma
- * @version 1.0 Copyright (c) Vedik Vishwakarma
+ * @author vedik vishwakarma
+ * @version 1.0 Copyright (c) vedik vishwakarma
  */
 
 public interface ORSView {
@@ -95,5 +95,11 @@ public interface ORSView {
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 	public String ERROR_VIEW = PAGE_FOLDER + "/ErrorView.jsp";
+	
+	public String INITIATIVE_CTL = APP_CONTEXT + "/ctl/InitiativeCtl";
+	public String INITIATIVE_VIEW = PAGE_FOLDER + "/InitiativeView.jsp";
+	
+	public String INITIATIVE_LIST_CTL = APP_CONTEXT + "/ctl/InitiativeListCtl";
+	public String INITIATIVE_LIST_VIEW = PAGE_FOLDER + "/InitiativeListView.jsp";
 
 }

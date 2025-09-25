@@ -7,9 +7,9 @@ import java.util.Date;
 /**
  * Data Utility class to format data from one format to another
  *
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
- * @Copyright (c) Vedik Vishwakarma
+ * @Copyright (c) vedik vishwakarma
  */
 public class DataUtility {
 	  /**

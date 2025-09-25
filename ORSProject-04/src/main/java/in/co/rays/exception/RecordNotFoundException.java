@@ -9,7 +9,7 @@ package in.co.rays.exception;
  * Usage: This exception can be thrown when a search or retrieval operation
  * fails to find a record with the specified criteria.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class RecordNotFoundException extends Exception {
 

@@ -21,7 +21,7 @@ import in.co.rays.util.JDBCDataSource;
  * Model class for Timetable management. Handles CRUD operations and
  * validations.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class TimetableModel {
 

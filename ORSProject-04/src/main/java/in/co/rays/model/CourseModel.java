@@ -18,7 +18,7 @@ import in.co.rays.util.JDBCDataSource;
  * Model class for handling Course operations such as add, update, delete, find
  * and search.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class CourseModel {
 

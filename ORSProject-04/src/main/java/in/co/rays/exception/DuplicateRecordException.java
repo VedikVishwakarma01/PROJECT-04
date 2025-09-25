@@ -9,7 +9,7 @@ package in.co.rays.exception;
  * Usage: This exception can be thrown when an operation violates a uniqueness
  * constraint, such as a duplicate login ID or primary key.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class DuplicateRecordException extends Exception {
 

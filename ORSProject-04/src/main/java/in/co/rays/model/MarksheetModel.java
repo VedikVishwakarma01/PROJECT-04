@@ -19,7 +19,7 @@ import in.co.rays.util.JDBCDataSource;
  * Model class for handling Marksheet operations like add, update, delete, and
  * search. This class interacts with the database table `st_marksheet`.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class MarksheetModel {
 

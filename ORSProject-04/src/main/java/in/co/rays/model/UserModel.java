@@ -27,8 +27,8 @@ import in.co.rays.util.JDBCDataSource;
  * This class uses JDBC for interaction with the database and supports
  * operations like registration, password change, and password recovery.
  * 
- * @author Vedik Vishwakarma
- * @version 1.0 copyright (c) Vedik Vishwakarma
+ * @author vedik vishwakarma
+ * @version 1.0 copyright (c) vedik vishwakarma
  */
 public class UserModel {
 
@@ -393,6 +393,9 @@ public class UserModel {
 
 			if (bean.getLogin() != null && bean.getLogin().length() > 0) {
 				sql.append(" and login like '" + bean.getLogin() + "%'");
+			}
+			if (bean.getGender() != null && bean.getGender().length() > 0) {
+				sql.append(" and gender like '" + bean.getGender() + "%'");
 			}
 
 		}

@@ -18,9 +18,9 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  * 
  * This class follows the Singleton design pattern.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
- * @Copyright (c) Vedik Vishwakarma
+ * @Copyright (c) vedik vishwakarma
  */
 public final class JDBCDataSource {
 

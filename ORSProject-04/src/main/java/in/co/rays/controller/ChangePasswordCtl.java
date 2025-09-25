@@ -23,7 +23,7 @@ import in.co.rays.util.ServletUtility;
 /**
  * Controller to handle Change Password functionality.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "ChangePasswordCtl", urlPatterns = { "/ctl/ChangePasswordCtl" })
 public class ChangePasswordCtl extends BaseCtl {

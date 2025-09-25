@@ -26,7 +26,7 @@ import in.co.rays.util.ServletUtility;
  * Subject Controller. Handles operations related to Subject entity including
  * preload of course list, validation, add, update, and redirection.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "SubjectCtl", urlPatterns = { "/ctl/SubjectCtl" })
 public class SubjectCtl extends BaseCtl {

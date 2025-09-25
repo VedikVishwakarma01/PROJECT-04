@@ -5,6 +5,7 @@
 <%@page import="in.co.rays.util.HTMLUtility"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
 <%@page import="in.co.rays.util.DataUtility"%>
 <%@page import="in.co.rays.util.ServletUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -51,6 +52,14 @@
                     <td align="center">
                         <label><b>First Name :</b></label>
                         <input type="text" name="firstName" placeholder="Enter First Name" value="<%=ServletUtility.getParameter("firstName", request)%>">&emsp;
+                        <label><b>Gender :</b></label>
+                        <%
+							HashMap<String, String> map = new HashMap<String, String>();
+							map.put("Female", "Female");
+							map.put("Male", "Male");
+
+							String htmlList = HTMLUtility.getList("gender", bean.getGender(), map);
+						%> <%=htmlList%>
 
                     	<label><b>Login Id :</b></label>
                     	<input type="text" name="login" placeholder="Enter email" value="<%=ServletUtility.getParameter("login", request)%>">
@@ -61,7 +70,7 @@
 						 <label><b>DOB : </b></label>
                          <input type="text" name="dob" placeholder="Enter dob" id="udate" value="<%=ServletUtility.getParameter("dob", request)%>">&emsp;
 
-                        <input type="submit" name="operation" value="<%=UserListCtl.OP_SEARCH%>">
+                        <input type="submit" name="operation" value="<%=UserListCtl.OP_SEARCH%>"> 
                         &nbsp;
                         <input type="submit" name="operation" value="<%=UserListCtl.OP_RESET%>">
                     </td>
@@ -125,7 +134,7 @@
                     <td align="center" style="width: 25%">
                         <input type="submit" name="operation" value="<%=UserListCtl.OP_NEW%>">
                     </td>
-                    <td align="center" style="width: 25%">
+                    <td align="center" tyle="width: 25%">
                         <input type="submit" name="operation" value="<%=UserListCtl.OP_DELETE%>">
                     </td>
                     <td style="width: 25%" align="right">

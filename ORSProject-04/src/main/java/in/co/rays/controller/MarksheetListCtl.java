@@ -22,7 +22,7 @@ import in.co.rays.util.ServletUtility;
  * Controller to handle Marksheet List operations. Supports pagination, search,
  * delete, and navigation between records.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "MarksheetListCtl", urlPatterns = { "/ctl/MarksheetListCtl" })
 public class MarksheetListCtl extends BaseCtl {

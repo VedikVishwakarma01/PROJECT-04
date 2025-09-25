@@ -33,7 +33,7 @@ import in.co.rays.util.ServletUtility;
  * Preloads required data such as college, course, and subject lists. Handles
  * form validation and submission logic for faculty management.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
  */
 public class FacultyCtl extends BaseCtl {

@@ -24,7 +24,7 @@ import in.co.rays.util.ServletUtility;
  * Controller to handle My Profile functionality of a user. Allows viewing and
  * updating user profile data.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "MyProfileCtl", urlPatterns = { "/ctl/MyProfileCtl" })
 public class MyProfileCtl extends BaseCtl {

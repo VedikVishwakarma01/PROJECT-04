@@ -28,7 +28,7 @@ import in.co.rays.util.ServletUtility;
  * - Deleting selected records
  * - Resetting or redirecting to new Faculty form
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
  */
 @WebServlet(name = "FacultyListCtl", urlPatterns = { "/ctl/FacultyListCtl" })

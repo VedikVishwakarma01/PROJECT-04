@@ -21,7 +21,7 @@ import in.co.rays.util.ServletUtility;
 /**
  * Controller to Get Marksheet by Roll Number functionality.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "GetMarksheetCtl", urlPatterns = { "/ctl/GetMarksheetCtl" })
 public class GetMarksheetCtl extends BaseCtl {

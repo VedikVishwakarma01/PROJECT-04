@@ -24,7 +24,7 @@ import in.co.rays.util.ServletUtility;
  * Functionality includes form validation, population of bean, and communication
  * with the model layer.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "RoleCtl", urlPatterns = { "/ctl/RoleCtl" })
 public class RoleCtl extends BaseCtl {

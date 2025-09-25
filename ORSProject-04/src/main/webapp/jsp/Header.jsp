@@ -64,6 +64,9 @@
     <a href="<%=ORSView.TIMETABLE_LIST_CTL%>"><b>Timetable List</b></a> <b>|</b>
     <a href="<%=ORSView.FACULTY_CTL%>"><b>Add Faculty</b></a> <b>|</b>
     <a href="<%=ORSView.FACULTY_LIST_CTL%>"><b>Faculty List</b></a> <b>|</b>
+    <a href="<%=ORSView.INITIATIVE_CTL%>"><b>Add Initiative</b></a> <b>|</b>
+    <a href="<%=ORSView.INITIATIVE_LIST_CTL%>"><b>Initiative List</b></a> <b>|</b>
+    
     <a href="<%=ORSView.JAVA_DOC%>" target="blank"><b>Java Doc</b></a> <b>|</b>
 
 <%

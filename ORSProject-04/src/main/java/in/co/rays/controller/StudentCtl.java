@@ -29,7 +29,7 @@ import in.co.rays.util.ServletUtility;
  * Functionalities: - Add new student - Update existing student - Form
  * validation - Preload college dropdown
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "StudentCtl", urlPatterns = "/ctl/StudentCtl")
 public class StudentCtl extends BaseCtl {

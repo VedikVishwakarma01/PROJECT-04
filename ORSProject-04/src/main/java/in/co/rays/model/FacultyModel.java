@@ -21,7 +21,7 @@ import in.co.rays.util.JDBCDataSource;
  * Model class for Faculty entity. Handles CRUD operations and search
  * functionality for faculty records.
  *
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class FacultyModel {
 

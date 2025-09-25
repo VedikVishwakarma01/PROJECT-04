@@ -24,7 +24,7 @@ import in.co.rays.util.ServletUtility;
  * Timetable List Controller to handle listing, searching, pagination, and
  * deleting of timetable records.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "TimetableListCtl", urlPatterns = { "/ctl/TimetableListCtl" })
 public class TimetableListCtl extends BaseCtl {

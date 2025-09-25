@@ -14,7 +14,7 @@ import in.co.rays.util.ServletUtility;
  * This controller forwards the request to the error view
  * when an unhandled exception occurs in the application.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
  */
 @WebServlet(name = "ErrorCtl", urlPatterns = { "/ErrorCtl" })

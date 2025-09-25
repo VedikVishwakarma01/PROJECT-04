@@ -26,7 +26,7 @@ import in.co.rays.util.ServletUtility;
  * User Controller to handle adding, updating, validation and displaying User
  * form.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "UserCtl", urlPatterns = { "/ctl/UserCtl" })
 public class UserCtl extends BaseCtl {
@@ -188,9 +188,9 @@ public class UserCtl extends BaseCtl {
 		UserModel model = new UserModel();
 
 		if (id > 0) {
-			UserBean bean;
+			
 			try {
-				bean = model.findByPk(id);
+				UserBean bean = model.findByPk(id);
 				ServletUtility.setBean(bean, request);
 			} catch (ApplicationException e) {
 				log.error(e);

@@ -9,7 +9,7 @@ package in.co.rays.exception;
  * Usage: This exception can be thrown when an unexpected error occurs during
  * the execution of application logic.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class ApplicationException extends Exception {
 

@@ -40,8 +40,8 @@ public class TestTimetableModel {
 		bean.setExamTime("9 to 12");
 		bean.setCourseId(6);
 		bean.setSubjectId(2);
-		bean.setCreatedBy("chetan@gmail.com");
-		bean.setModifiedBy("chetan@gmail.com");
+		bean.setCreatedBy("vedik vishwakarma@gmail.com");
+		bean.setModifiedBy("vedik vishwakarma@gmail.com");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 
@@ -60,8 +60,8 @@ public class TestTimetableModel {
 		bean.setExamTime("01:00 PM to 04:00 PM");
 		bean.setCourseId(1);
 		bean.setSubjectId(1);
-		bean.setCreatedBy("chetan@gmail.com");
-		bean.setModifiedBy("chetan@gmail.com");
+		bean.setCreatedBy("vedik vishwakarma@gmail.com");
+		bean.setModifiedBy("vedik vishwakarma@gmail.com");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 		

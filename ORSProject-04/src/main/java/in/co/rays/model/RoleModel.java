@@ -17,7 +17,7 @@ import in.co.rays.util.JDBCDataSource;
  * RoleModel handles all CRUD operations and search functionality
  * for Role entities in the application.
  *
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class RoleModel {
 	

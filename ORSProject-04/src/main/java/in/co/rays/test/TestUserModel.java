@@ -111,7 +111,7 @@ public class TestUserModel {
 	
 	private static void testAuthenticate() throws ApplicationException {
 		UserModel model = new UserModel();
-		UserBean bean = model.authenticate("chetan@gmail.com","Chetan@123");
+		UserBean bean = model.authenticate("vedik vishwakarma@gmail.com","vedik vishwakarma@123");
 
 		if (bean != null) {
 			System.out.print(bean.getId());
@@ -134,7 +134,7 @@ public class TestUserModel {
 
 	private static void testFindByLogin() throws ApplicationException {
 		UserModel model = new UserModel();
-		UserBean bean = model.findByLogin("chetan@gmail.com");
+		UserBean bean = model.findByLogin("vedik vishwakarma@gmail.com");
 
 		if (bean != null) {
 			System.out.print(bean.getId());

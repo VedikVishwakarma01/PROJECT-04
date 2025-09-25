@@ -24,7 +24,7 @@ import in.co.rays.util.ServletUtility;
  * Subject List Controller. Handles listing, searching, pagination, and deletion
  * of Subjects. Also preloads Course and Subject lists for use in views.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "SubjectListCtl", urlPatterns = { "/ctl/SubjectListCtl" })
 public class SubjectListCtl extends BaseCtl {

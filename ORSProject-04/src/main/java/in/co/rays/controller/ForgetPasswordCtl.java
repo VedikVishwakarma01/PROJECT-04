@@ -29,7 +29,7 @@ import in.co.rays.util.ServletUtility;
  * Operations Supported:
  * - GO: Process the request to send the password via email.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
  */
 @WebServlet(name = "ForgetPasswordCtl", urlPatterns = { "/ForgetPasswordCtl" })
@@ -127,7 +127,8 @@ public class ForgetPasswordCtl extends BaseCtl {
             } catch (ApplicationException e) {
                 ServletUtility.setErrorMessage("Please check your internet connection..!!", request);
                 log.error(e);
-				ServletUtility.handleException(e, request, response);            }
+				ServletUtility.handleException(e, request, response);         
+				}
         }
         log.info("ForgetPasswordCtl doPost Method Ended");
         ServletUtility.forward(getView(), request, response);

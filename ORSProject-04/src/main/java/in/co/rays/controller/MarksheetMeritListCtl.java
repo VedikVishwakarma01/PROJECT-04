@@ -21,7 +21,7 @@ import in.co.rays.util.ServletUtility;
  * Controller to display the Marksheet Merit List. Handles both GET and POST
  * operations for showing top-performing students.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "MarksheetMeritListCtl", urlPatterns = { "/ctl/MarksheetMeritListCtl" })
 public class MarksheetMeritListCtl extends BaseCtl {

@@ -24,7 +24,7 @@ import in.co.rays.util.ServletUtility;
  * UserRegistrationCtl is a servlet controller class to handle user
  * registration. It validates input data and processes registration requests.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "UserRegistrationCtl", urlPatterns = { "/UserRegistrationCtl" })
 public class UserRegistrationCtl extends BaseCtl {

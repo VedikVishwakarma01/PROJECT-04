@@ -38,8 +38,8 @@ public class TestMarksheetModel {
 		bean.setPhysics(55);
 		bean.setChemistry(78);
 		bean.setMaths(65);
-		bean.setCreatedBy("chetan@gmail.com");
-		bean.setModifiedBy("chetan@gmail.com");
+		bean.setCreatedBy("vedik vishwakarma@gmail.com");
+		bean.setModifiedBy("vedik vishwakarma@gmail.com");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 
@@ -56,8 +56,8 @@ public class TestMarksheetModel {
 		bean.setPhysics(65);
 		bean.setChemistry(62);
 		bean.setMaths(82);
-		bean.setCreatedBy("chetan@gmail.com");
-		bean.setModifiedBy("chetan@gmail.com");
+		bean.setCreatedBy("vedik vishwakarma@gmail.com");
+		bean.setModifiedBy("vedik vishwakarma@gmail.com");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 

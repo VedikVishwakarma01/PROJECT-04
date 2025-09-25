@@ -23,7 +23,7 @@ import in.co.rays.util.ServletUtility;
  * CollegeCtl Servlet Controller class to perform Add, Update, Delete and Get
  * operations for College.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma 
  */
 @WebServlet(name = "CollegeCtl", urlPatterns = { "/ctl/CollegeCtl" })
 public class CollegeCtl extends BaseCtl {

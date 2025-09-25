@@ -23,7 +23,7 @@ import in.co.rays.util.ServletUtility;
 /**
  * User List Controller to handle list, search, delete operations of User.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "UserListCtl", urlPatterns = "/ctl/UserListCtl")
 public class UserListCtl extends BaseCtl {
@@ -67,6 +67,7 @@ public class UserListCtl extends BaseCtl {
 		bean.setLogin(DataUtility.getString(request.getParameter("login")));
 		bean.setRoleId(DataUtility.getLong(request.getParameter("roleId")));
 		bean.setDob(DataUtility.getDate(request.getParameter("dob")));
+		bean.setGender(DataUtility.getString(request.getParameter("gender")));
 
 		log.info("UserListCtl populateBean Method Ended");
 		return bean;

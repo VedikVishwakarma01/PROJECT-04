@@ -19,7 +19,7 @@ import in.co.rays.util.JDBCDataSource;
  * Model class for managing Subject entities in the database. Provides CRUD
  * operations and search functionalities.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class SubjectModel {
 

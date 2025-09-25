@@ -22,7 +22,7 @@ import in.co.rays.util.ServletUtility;
  * Course List functionality Controller. Performs operation for list and search
  * operations of Course.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
  */
 @WebServlet(name = "CourseListCtl", urlPatterns = { "/ctl/CourseListCtl" })

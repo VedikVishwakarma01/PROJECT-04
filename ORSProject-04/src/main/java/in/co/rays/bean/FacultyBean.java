@@ -5,8 +5,8 @@ import java.util.Date;
 /**
  * Faculty JavaBean encapsulates Faculty attributes
  * 
- * @author Chetan Patidar
- * @version 1.0 Copyright (c) Chetan Patidar
+ * @author vedik vishwakarma Patidar
+ * @version 1.0 Copyright (c) vedik vishwakarma Patidar
  * 
  */
 public class FacultyBean extends BaseBean {

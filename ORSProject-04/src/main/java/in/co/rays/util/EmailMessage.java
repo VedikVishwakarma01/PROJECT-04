@@ -3,9 +3,9 @@ package in.co.rays.util;
 /**
  * Contains Email Message
  *
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
- * @Copyright (c) Vedik Vishwakarma
+ * @Copyright (c) vedik vishwakarma
  *
  */
 public class EmailMessage {

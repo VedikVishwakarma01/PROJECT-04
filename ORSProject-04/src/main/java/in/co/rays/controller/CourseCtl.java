@@ -34,7 +34,7 @@ import in.co.rays.util.ServletUtility;
  * <li>Supports Save, Update, Reset, and Cancel operations.</li>
  * </ul>
  *
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  * @version 1.0
  */
 @WebServlet(name = "CourseCtl", urlPatterns = { "/ctl/CourseCtl" })

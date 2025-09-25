@@ -24,7 +24,7 @@ import in.co.rays.util.ServletUtility;
  * Supports operations like search, next, previous, delete, reset, and
  * navigation to Role creation.
  *
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 @WebServlet(name = "RoleListCtl", urlPatterns = { "/ctl/RoleListCtl" })
 public class RoleListCtl extends BaseCtl {

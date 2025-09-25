@@ -35,8 +35,8 @@ public class TestSubjectModel {
 		bean.setName("Financial Management");
 		bean.setCourseId(6);
 		bean.setDescription("Financial Management");
-		bean.setCreatedBy("chetan@gmail.com");
-		bean.setModifiedBy("chetan@gmail.com");
+		bean.setCreatedBy("vedik vishwakarma@gmail.com");
+		bean.setModifiedBy("vedik vishwakarma@gmail.com");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 
@@ -51,8 +51,8 @@ public class TestSubjectModel {
 		bean.setName("Financial Management");
 		bean.setCourseId(6);
 		bean.setDescription("Financial Management");
-		bean.setCreatedBy("chetan@gmail.com");
-		bean.setModifiedBy("chetan@gmail.com");
+		bean.setCreatedBy("vedik vishwakarma@gmail.com");
+		bean.setModifiedBy("vedik vishwakarma@gmail.com");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 		

@@ -9,7 +9,7 @@ package in.co.rays.exception;
  * Usage: This exception can be thrown when there is a failure or error while
  * interacting with the database.
  * 
- * @author Vedik Vishwakarma
+ * @author vedik vishwakarma
  */
 public class DatabaseException extends Exception {
 
