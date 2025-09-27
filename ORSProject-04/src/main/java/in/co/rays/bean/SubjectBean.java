@@ -2,9 +2,9 @@ package in.co.rays.bean;
 /**
  * Subject JavaBean encapsulates Subject attributes
  * 
- * @author vedik vishwakarma Patidar
+ * @author vedik vishwakarma 
  * @version 1.0
- * Copyright (c) vedik vishwakarma Patidar
+ * Copyright (c) vedik vishwakarma 
  * 
  */
 public class SubjectBean extends BaseBean {

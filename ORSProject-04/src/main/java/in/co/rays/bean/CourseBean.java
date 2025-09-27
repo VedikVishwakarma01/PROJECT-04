@@ -3,8 +3,8 @@ package in.co.rays.bean;
 /**
  * Course JavaBean encapsulates Course attributes
  * 
- * @author vedik vishwakarma Patidar
- * @version 1.0 Copyright (c) vedik vishwakarma Patidar
+ * @author vedik vishwakarma 
+ * @version 1.0 Copyright (c) vedik vishwakarma 
  * 
  */
 public class CourseBean extends BaseBean {

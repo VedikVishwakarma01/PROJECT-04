@@ -14,10 +14,10 @@ import in.co.rays.model.UserModel;
 public class TestUserModel {
 
 	public static void main(String[] args) throws Exception {
-		testNextPk();
+	//	testNextPk();
 //		testSearch();
 //		testAdd();
-//		testUpdate();
+		testUpdate();
 //		testDelete();
 //		testFindByPk();
 //		testFindByLogin();
@@ -58,7 +58,7 @@ public class TestUserModel {
 		UserModel model = new UserModel();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		bean.setId(2);
+		bean.setId(4);
 		bean.setFirstName("Amit");
 		bean.setLastName("Kirar");
 		bean.setLogin("amit@gmail.com");

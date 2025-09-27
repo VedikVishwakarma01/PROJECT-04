@@ -24,7 +24,7 @@ import in.co.rays.util.PropertyReader;
 import in.co.rays.util.ServletUtility;
 
 /**
- * User List Controller to handle list, search, delete operations of User.
+ * Initiative List Controller to handle list, search, delete operations of User.
  * 
  * @author vedik vishwakarma
  */
@@ -34,13 +34,13 @@ public class InitiativeListCtl extends BaseCtl {
 	Logger log = Logger.getLogger(InitiativeListCtl.class);
 
 	/**
-	 * Loads Role list to request scope for dropdown.
+	 * Loads Initiative list to request scope for dropdown.
 	 * 
 	 * @param request HttpServletRequest
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("UserCtl preload Method Started");
+		log.info("InitiativeListCtl preload Method Started");
 
 		InitiativeModel model = new InitiativeModel();
 		try {
@@ -58,18 +58,18 @@ public class InitiativeListCtl extends BaseCtl {
 		} catch (ApplicationException e) {
 			log.error(e);
 		}
-		log.info("UserCtl preload Method Ended");
+		log.info("InitiativeListCtl preload Method Ended");
 	}
 
 	/**
-	 * Populates UserBean from request parameters for search criteria.
+	 * Populates InitiativeBean from request parameters for search criteria.
 	 * 
 	 * @param request HttpServletRequest
 	 * @return BaseBean containing UserBean
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("UserListCtl populateBean Method Started");
+		log.info("InitiativeListCtl populateBean Method Started");
 
 		InitiativeBean bean = new InitiativeBean();
 
@@ -77,12 +77,12 @@ public class InitiativeListCtl extends BaseCtl {
 		bean.setType(DataUtility.getString(request.getParameter("type")));
 		bean.setVersion(DataUtility.getInt(request.getParameter("version")));
 
-		log.info("UserListCtl populateBean Method Ended");
+		log.info("InitiativeListCtl populateBean Method Ended");
 		return bean;
 	}
 
 	/**
-	 * Handles HTTP GET request for initial user list page load.
+	 * Handles HTTP GET request for initial Initiative list page load.
 	 * 
 	 * @param request  HttpServletRequest
 	 * @param response HttpServletResponse
@@ -92,7 +92,7 @@ public class InitiativeListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("UserListCtl doGet Method Started");
+		log.info("InitiativeListCtl doGet Method Started");
 
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -119,7 +119,7 @@ public class InitiativeListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 		}
 
-		log.info("UserListCtl doGet Method Ended");
+		log.info("InitiativeListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -135,7 +135,7 @@ public class InitiativeListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("UserListCtl doPost Method Started");
+		log.info("InitiativeListCtl doPost Method Started");
 
 		List<InitiativeBean> list = null;
 		List<InitiativeBean> next = null;
@@ -199,12 +199,12 @@ public class InitiativeListCtl extends BaseCtl {
 			log.error(e);
 			ServletUtility.handleException(e, request, response);
 		}
-		log.info("UserListCtl doPost Method Ended");
+		log.info("InitiativeListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
 	/**
-	 * Returns the view path of User List.
+	 * Returns the view path of Initiative List.
 	 * 
 	 * @return String view path
 	 */

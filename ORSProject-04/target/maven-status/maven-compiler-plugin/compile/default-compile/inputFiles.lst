@@ -5,6 +5,7 @@ C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\test\TestSu
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\SubjectListCtl.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\exception\RecordNotFoundException.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\test\TestFacultyModel.java
+C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\model\InitiativeModel.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\CollegeCtl.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\MarksheetMeritListCtl.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\StudentCtl.java
@@ -42,6 +43,7 @@ C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\util\DataVa
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\model\StudentModel.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\bean\StudentBean.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\BaseCtl.java
+C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\InitiativeCtl.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\util\EmailUtility.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\bean\CourseBean.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\RoleCtl.java
@@ -54,6 +56,7 @@ C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\model\UserM
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\test\TestRoleModel.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\ORSView.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\test\TestUserModel.java
+C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\test\TestInitiative.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\test\TestMarksheetModel.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\CourseCtl.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\ErrorCtl.java
@@ -65,7 +68,9 @@ C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\exception\DatabaseException.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\bean\BaseBean.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\MyProfileCtl.java
+C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\InitiativeListCtl.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\bean\TimetableBean.java
+C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\bean\InitiativeBean.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\MarksheetCtl.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\controller\SubjectCtl.java
 C:\Users\HP\Desktop\PROJECT_4\ORSProject-04\src\main\java\in\co\rays\util\EmailBuilder.java

@@ -5,9 +5,9 @@ import java.util.Date;
 /**
  * Student JavaBean encapsulates Student attributes
  * 
- * @author vedik vishwakarma Patidar
+ * @author vedik vishwakarma 
  * @version 1.0 
- * Copyright (c) vedik vishwakarma Patidar
+ * Copyright (c) vedik vishwakarma 
  * 
  */
 public class StudentBean extends BaseBean {

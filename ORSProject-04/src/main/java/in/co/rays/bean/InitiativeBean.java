@@ -2,6 +2,12 @@ package in.co.rays.bean;
 
 import java.util.Date;
 
+/**
+ * Initiative JavaBean contains Initiative attributes
+ * 
+ * @author Vedik Vishwakarma
+ *
+ */
 public class InitiativeBean extends BaseBean {
 
 	private String initiativeName;
@@ -42,6 +48,7 @@ public class InitiativeBean extends BaseBean {
 	}
 	
 	@Override
+	
 	public String getKey() {
 		return id + "";
 	}

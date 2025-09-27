@@ -21,7 +21,7 @@ import in.co.rays.util.PropertyReader;
 import in.co.rays.util.ServletUtility;
 
 /**
- * User Controller to handle adding, updating, validation and displaying User
+ * Initiative Controller to handle adding, updating, validation and displaying Initiative
  * form.
  * 
  * @author vedik vishwakarma
@@ -38,7 +38,7 @@ public class InitiativeCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("UserCtl preload Method Started");
+		log.info("Initiative preload Method Started");
 
 		InitiativeModel model = new InitiativeModel();
 		try {
@@ -47,18 +47,18 @@ public class InitiativeCtl extends BaseCtl {
 		} catch (ApplicationException e) {
 			log.error(e);
 		}
-		log.info("UserCtl preload Method Ended");
+		log.info("Initiative preload Method Ended");
 	}
 
 	/**
-	 * Validates User form data from the request.
+	 * Validates Initiative form data from the request.
 	 * 
 	 * @param request HttpServletRequest
 	 * @return boolean true if valid, else false
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("UserCtl validate Method Started");
+		log.info("Initiative validate Method Started");
 
 		boolean isValid = true;
 
@@ -94,19 +94,19 @@ public class InitiativeCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("UserCtl validate Method Ended");
+		log.info("Initiative validate Method Ended");
 		return isValid;
 	}
 
 	/**
-	 * Populates UserBean from request parameters.
+	 * Populates InitiativeBean from request parameters.
 	 * 
 	 * @param request HttpServletRequest
 	 * @return BaseBean populated UserBean
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("UserCtl populateBean Method Started");
+		log.info("Initiative populateBean Method Started");
 
 		InitiativeBean bean = new InitiativeBean();
 
@@ -118,12 +118,12 @@ public class InitiativeCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("UserCtl populateBean Method Ended");
+		log.info("Initiative populateBean Method Ended");
 		return bean;
 	}
 
 	/**
-	 * Handles GET request for user form. If id is passed, loads UserBean to edit.
+	 * Handles GET request for Initiative form. If id is passed, loads InitiativeBean to edit.
 	 * 
 	 * @param request  HttpServletRequest
 	 * @param response HttpServletResponse
@@ -133,7 +133,7 @@ public class InitiativeCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("UserCtl doGet Method Started");
+		log.info("Initiative doGet Method Started");
 
 		long id = DataUtility.getLong(request.getParameter("id"));
 
@@ -151,7 +151,7 @@ public class InitiativeCtl extends BaseCtl {
 			}
 		}
 
-		log.info("UserCtl doGet Method Ended");
+		log.info("Initiative doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -166,7 +166,7 @@ public class InitiativeCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("UserCtl doPost Method Started");
+		log.info("Initiative doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -210,12 +210,12 @@ public class InitiativeCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("UserCtl doPost Method Ended");
+		log.info("UseInitiativerCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
 	/**
-	 * Returns the view for User form.
+	 * Returns the view for Initiative form.
 	 * 
 	 * @return String view path
 	 */

@@ -1,4 +1,5 @@
 in\co\rays\controller\MarksheetMeritListCtl.class
+in\co\rays\bean\InitiativeBean.class
 in\co\rays\controller\FacultyListCtl.class
 in\co\rays\controller\MyProfileCtl.class
 in\co\rays\bean\TimetableBean.class
@@ -20,6 +21,7 @@ in\co\rays\model\FacultyModel.class
 in\co\rays\model\CollegeModel.class
 in\co\rays\bean\UserBean.class
 in\co\rays\controller\TimetableListCtl.class
+in\co\rays\test\TestInitiative.class
 in\co\rays\util\EmailBuilder.class
 in\co\rays\bean\CourseBean.class
 in\co\rays\bean\StudentBean.class
@@ -50,12 +52,14 @@ in\co\rays\controller\UserRegistrationCtl.class
 in\co\rays\model\TimetableModel.class
 in\co\rays\bean\RoleBean.class
 in\co\rays\util\EmailUtility$1.class
+in\co\rays\model\InitiativeModel.class
 in\co\rays\controller\SubjectCtl.class
 in\co\rays\model\UserModel.class
 in\co\rays\controller\UserListCtl.class
 in\co\rays\controller\StudentCtl.class
 in\co\rays\test\TestCourseModel.class
 in\co\rays\controller\GetMarksheetCtl.class
+in\co\rays\controller\InitiativeCtl.class
 in\co\rays\controller\BaseCtl.class
 in\co\rays\controller\FacultyCtl.class
 in\co\rays\test\TestRoleModel.class
@@ -64,6 +68,7 @@ in\co\rays\controller\MarksheetCtl.class
 in\co\rays\controller\CollegeCtl.class
 in\co\rays\test\TestMarksheetModel.class
 in\co\rays\controller\RoleListCtl.class
+in\co\rays\controller\InitiativeListCtl.class
 in\co\rays\controller\CourseListCtl.class
 in\co\rays\bean\CollegeBean.class
 in\co\rays\controller\RoleCtl.class

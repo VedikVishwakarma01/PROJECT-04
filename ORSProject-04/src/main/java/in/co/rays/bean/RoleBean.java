@@ -3,8 +3,8 @@ package in.co.rays.bean;
 /**
  * Role JavaBean encapsulates Role attributes
  * 
- * @author vedik vishwakarma Patidar
- * @version 1.0 Copyright (c) vedik vishwakarma Patidar
+ * @author vedik vishwakarma 
+ * @version 1.0 Copyright (c) vedik vishwakarma 
  * 
  */
 public class RoleBean extends BaseBean {
