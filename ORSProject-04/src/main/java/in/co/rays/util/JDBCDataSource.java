@@ -48,7 +48,11 @@ public final class JDBCDataSource {
 
 			try {
 				dataSource.cpds.setDriverClass(rb.getString("driver"));
-				dataSource.cpds.setJdbcUrl(rb.getString("url"));
+				String jdbcUrl = System.getenv("DATABASE_URL");
+				if (jdbcUrl == null) {
+					jdbcUrl = rb.getString("url");
+				}
+				dataSource.cpds.setJdbcUrl(jdbcUrl);
 				dataSource.cpds.setUser(rb.getString("username"));
 				dataSource.cpds.setPassword(rb.getString("password"));
 				dataSource.cpds.setAcquireIncrement(Integer.parseInt(rb.getString("acquireIncrement")));
