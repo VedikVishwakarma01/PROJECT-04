@@ -1,0 +1,48 @@
+package in.co.rays.bean;
+
+/**
+ * Course JavaBean encapsulates Course attributes
+ * 
+ * @author vedik vishwakarma 
+ * @version 1.0 Copyright (c) vedik vishwakarma 
+ * 
+ */
+public class CourseBean extends BaseBean {
+	private String name;
+	private String duration;
+	private String description;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String getKey() {
+		return id + "";
+	}
+
+	@Override
+	public String getValue() {
+		return name;
+	}
+}
