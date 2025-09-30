@@ -38,7 +38,7 @@ public class RoleListCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("RoleListCtl preload Method Started");
+		log.debug("RoleListCtl preload Method Started");
 
 		RoleModel model = new RoleModel();
 
@@ -48,7 +48,7 @@ public class RoleListCtl extends BaseCtl {
 		} catch (ApplicationException e) {
 			log.error(e);
 		}
-		log.info("RoleListCtl preload Method Ended");
+		log.debug("RoleListCtl preload Method Ended");
 	}
 
 	/**
@@ -59,14 +59,14 @@ public class RoleListCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("RoleListCtl preload Method Started");
+		log.debug("RoleListCtl preload Method Started");
 
 		RoleBean bean = new RoleBean();
 
 		bean.setName(DataUtility.getString(request.getParameter("name")));
 		bean.setId(DataUtility.getLong(request.getParameter("roleId")));
 
-		log.info("RoleListCtl preload Method Ended");
+		log.debug("RoleListCtl preload Method Ended");
 		return bean;
 	}
 
@@ -81,7 +81,7 @@ public class RoleListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("RoleListCtl doGet Method Started");
+		log.debug("RoleListCtl doGet Method Started");
 
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -107,7 +107,7 @@ public class RoleListCtl extends BaseCtl {
 			log.error(e);
 			ServletUtility.handleException(e, request, response);
 		}
-		log.info("RoleListCtl doGet Method Ended");
+		log.debug("RoleListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -123,7 +123,7 @@ public class RoleListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("RoleListCtl doPost Method Started");
+		log.debug("RoleListCtl doPost Method Started");
 
 		List list = null;
 		List next = null;
@@ -193,7 +193,7 @@ public class RoleListCtl extends BaseCtl {
 			log.error(e);
 			ServletUtility.handleException(e, request, response);
 		}
-		log.info("RoleListCtl doPost Method Ended");
+		log.debug("RoleListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

@@ -32,7 +32,7 @@ public class StudentModel {
 	 * @throws ApplicationException if any database error occurs
 	 */
 	public Integer nextPk() throws ApplicationException {
-		log.info("StudentModel nextPk Started");
+		log.debug("StudentModel nextPk Started");
 		int pk = 0;
 		Connection conn = null;
 		try {
@@ -49,7 +49,7 @@ public class StudentModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("StudentModel nextPk Ended");
+		log.debug("StudentModel nextPk Ended");
 		return pk + 1;
 	}
 
@@ -62,7 +62,7 @@ public class StudentModel {
 	 * @throws DuplicateRecordException if email already exists
 	 */
 	public Long add(StudentBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("StudentModel add Started");
+		log.debug("StudentModel add Started");
 
 		CollegeModel collModel = new CollegeModel();
 		CollegeBean collegeBean = collModel.findByPk(bean.getCollegeId());
@@ -111,7 +111,7 @@ public class StudentModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("StudentModel add Ended");
+		log.debug("StudentModel add Ended");
 		return pk;
 	}
 
@@ -123,7 +123,7 @@ public class StudentModel {
 	 * @throws DuplicateRecordException if duplicate email exists
 	 */
 	public void update(StudentBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("StudentModel update Started");
+		log.debug("StudentModel update Started");
 
 		CollegeModel collModel = new CollegeModel();
 		CollegeBean collegeBean = collModel.findByPk(bean.getCollegeId());
@@ -172,7 +172,7 @@ public class StudentModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("StudentModel update Ended");
+		log.debug("StudentModel update Ended");
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class StudentModel {
 	 * @throws ApplicationException if any database error occurs
 	 */
 	public void delete(StudentBean bean) throws ApplicationException {
-		log.info("StudentModel delete Started");
+		log.debug("StudentModel delete Started");
 
 		Connection conn = null;
 
@@ -208,7 +208,7 @@ public class StudentModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("StudentModel delete Ended");
+		log.debug("StudentModel delete Ended");
 	}
 
 	/**
@@ -219,7 +219,7 @@ public class StudentModel {
 	 * @throws ApplicationException if any database error occurs
 	 */
 	public StudentBean findByPk(long id) throws ApplicationException {
-		log.info("StudentModel findByPk Started");
+		log.debug("StudentModel findByPk Started");
 
 		StudentBean bean = null;
 		Connection conn = null;
@@ -254,7 +254,7 @@ public class StudentModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("StudentModel findByPk Ended");
+		log.debug("StudentModel findByPk Ended");
 		return bean;
 	}
 
@@ -266,7 +266,7 @@ public class StudentModel {
 	 * @throws ApplicationException if any database error occurs
 	 */
 	public StudentBean findByEmail(String email) throws ApplicationException {
-		log.info("StudentModel findbyEmail Started");
+		log.debug("StudentModel findbyEmail Started");
 
 		StudentBean bean = null;
 		Connection conn = null;
@@ -302,7 +302,7 @@ public class StudentModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("StudentModel findbyEmail Ended");
+		log.debug("StudentModel findbyEmail Ended");
 		return bean;
 	}
 
@@ -313,7 +313,7 @@ public class StudentModel {
 	 * @throws ApplicationException if any database error occurs
 	 */
 	public List<StudentBean> list() throws ApplicationException {
-		log.info("StudentModel list Method");
+		log.debug("StudentModel list Method");
 		return search(null, 0, 0);
 	}
 
@@ -327,7 +327,7 @@ public class StudentModel {
 	 * @throws ApplicationException if any database error occurs
 	 */
 	public List<StudentBean> search(StudentBean bean, int pageNo, int pageSize) throws ApplicationException {
-		log.info("StudentModel search Started");
+		log.debug("StudentModel search Started");
 
 		StringBuffer sql = new StringBuffer("select * from st_student where 1=1 ");
 
@@ -386,7 +386,7 @@ public class StudentModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("StudentModel search Ended");
+		log.debug("StudentModel search Ended");
 		return list;
 	}
 }

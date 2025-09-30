@@ -40,7 +40,7 @@ public class MarksheetCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("MarksheetCtl preload Method Started");
+		log.debug("MarksheetCtl preload Method Started");
 
 		StudentModel model = new StudentModel();
 
@@ -51,7 +51,7 @@ public class MarksheetCtl extends BaseCtl {
 			log.error(e);
 			return;
 		}
-		log.info("MarksheetCtl preload Method Ended");
+		log.debug("MarksheetCtl preload Method Ended");
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class MarksheetCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("MarksheetCtl validate Method Started");
+		log.debug("MarksheetCtl validate Method Started");
 
 		boolean isValid = true;
 
@@ -123,7 +123,7 @@ public class MarksheetCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("MarksheetCtl validate Method Ended");
+		log.debug("MarksheetCtl validate Method Ended");
 		return isValid;
 
 	}
@@ -136,7 +136,7 @@ public class MarksheetCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("MarksheetCtl populateBean Method Started");
+		log.debug("MarksheetCtl populateBean Method Started");
 
 		MarksheetBean bean = new MarksheetBean();
 
@@ -157,7 +157,7 @@ public class MarksheetCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("MarksheetCtl populateBean Method Ended");
+		log.debug("MarksheetCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -172,7 +172,7 @@ public class MarksheetCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("MarksheetCtl doGet Method Started");
+		log.debug("MarksheetCtl doGet Method Started");
 
 		long id = DataUtility.getLong(request.getParameter("id"));
 
@@ -189,7 +189,7 @@ public class MarksheetCtl extends BaseCtl {
 			}
 		}
 
-		log.info("MarksheetCtl doGet Method Ended");
+		log.debug("MarksheetCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -204,7 +204,7 @@ public class MarksheetCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("MarksheetCtl doPost Method Started");
+		log.debug("MarksheetCtl doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -247,7 +247,7 @@ public class MarksheetCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.MARKSHEET_CTL, request, response);
 			return;
 		}
-		log.info("MarksheetCtl doPost Method Ended");
+		log.debug("MarksheetCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

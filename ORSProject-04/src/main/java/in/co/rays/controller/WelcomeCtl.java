@@ -34,11 +34,11 @@ public class WelcomeCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("WelcomeCtl doGet Method Started");
+		log.debug("WelcomeCtl doGet Method Started");
 		
 		ServletUtility.forward(getView(), request, response);
 		
-		log.info("WelcomeCtl doGet Method Ended");
+		log.debug("WelcomeCtl doGet Method Ended");
 
 	}
 

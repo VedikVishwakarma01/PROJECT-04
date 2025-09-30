@@ -41,7 +41,7 @@ public class MyProfileCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("MyProfileCtl validate Method Started");
+		log.debug("MyProfileCtl validate Method Started");
 
 		boolean isValid = true;
 
@@ -88,7 +88,7 @@ public class MyProfileCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("MyProfileCtl validate Method Ended");
+		log.debug("MyProfileCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -100,7 +100,7 @@ public class MyProfileCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("MyProfileCtl populateBean Method Started");
+		log.debug("MyProfileCtl populateBean Method Started");
 
 		UserBean bean = new UserBean();
 
@@ -114,7 +114,7 @@ public class MyProfileCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("MyProfileCtl populateBean Method Ended");
+		log.debug("MyProfileCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -129,7 +129,7 @@ public class MyProfileCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("MyProfileCtl doGet Method Started");
+		log.debug("MyProfileCtl doGet Method Started");
 
 		HttpSession session = request.getSession(true);
 		UserBean user = (UserBean) session.getAttribute("user");
@@ -147,7 +147,7 @@ public class MyProfileCtl extends BaseCtl {
 				return;
 			}
 		}
-		log.info("MyProfileCtl doGet Method Ended");
+		log.debug("MyProfileCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -163,7 +163,7 @@ public class MyProfileCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("MyProfileCtl doPost Method Started");
+		log.debug("MyProfileCtl doPost Method Started");
 
 		HttpSession session = request.getSession(true);
 
@@ -202,7 +202,7 @@ public class MyProfileCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.CHANGE_PASSWORD_CTL, request, response);
 			return;
 		}
-		log.info("MyProfileCtl doPost Method Ended");
+		log.debug("MyProfileCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

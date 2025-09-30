@@ -31,7 +31,7 @@ public class CourseModel {
 	 * @throws ApplicationException if a database exception occurs
 	 */
 	public Integer nextPk() throws ApplicationException {
-		log.info("CourseModel nextPk Started");
+		log.debug("CourseModel nextPk Started");
 		int pk = 0;
 		Connection conn = null;
 		try {
@@ -48,7 +48,7 @@ public class CourseModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("CourseModel nextPk Ended");
+		log.debug("CourseModel nextPk Ended");
 		return pk + 1;
 	}
 
@@ -61,7 +61,7 @@ public class CourseModel {
 	 * @throws DuplicateRecordException if the course name already exists
 	 */
 	public Long add(CourseBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("CourseModel add Started");
+		log.debug("CourseModel add Started");
 
 		CourseBean existBean = findByName(bean.getName());
 
@@ -101,7 +101,7 @@ public class CourseModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("CourseModel add Ended");
+		log.debug("CourseModel add Ended");
 		return pk;
 	}
 
@@ -113,7 +113,7 @@ public class CourseModel {
 	 * @throws DuplicateRecordException if the course name already exists
 	 */
 	public void update(CourseBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("CourseModel update Started");
+		log.debug("CourseModel update Started");
 
 		CourseBean existBean = findByName(bean.getName());
 
@@ -151,7 +151,7 @@ public class CourseModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("CourseModel update Ended");
+		log.debug("CourseModel update Ended");
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class CourseModel {
 	 * @throws ApplicationException if a database exception occurs
 	 */
 	public void delete(CourseBean bean) throws ApplicationException {
-		log.info("CourseModel delete Started");
+		log.debug("CourseModel delete Started");
 		Connection conn = null;
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -184,7 +184,7 @@ public class CourseModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("CourseModel delete Ended");
+		log.debug("CourseModel delete Ended");
 	}
 
 	/**
@@ -195,7 +195,7 @@ public class CourseModel {
 	 * @throws ApplicationException if a database exception occurs
 	 */
 	public CourseBean findByPk(Long id) throws ApplicationException {
-		log.info("CourseModel findByPk Started");
+		log.debug("CourseModel findByPk Started");
 		Connection conn = null;
 		CourseBean bean = null;
 		try {
@@ -224,7 +224,7 @@ public class CourseModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("CourseModel findByPk Ended");
+		log.debug("CourseModel findByPk Ended");
 		return bean;
 	}
 
@@ -236,7 +236,7 @@ public class CourseModel {
 	 * @throws ApplicationException if a database exception occurs
 	 */
 	public CourseBean findByName(String name) throws ApplicationException {
-		log.info("CourseModel findByName Started");
+		log.debug("CourseModel findByName Started");
 		Connection conn = null;
 		CourseBean bean = null;
 		try {
@@ -265,7 +265,7 @@ public class CourseModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("CourseModel findByName Ended");
+		log.debug("CourseModel findByName Ended");
 		return bean;
 	}
 
@@ -289,7 +289,7 @@ public class CourseModel {
 	 * @throws ApplicationException if a database exception occurs
 	 */
 	public List<CourseBean> search(CourseBean bean, int pageNo, int pageSize) throws ApplicationException {
-		log.info("CourseModel search Started");
+		log.debug("CourseModel search Started");
 		StringBuffer sql = new StringBuffer("select * from st_course where 1=1 ");
 
 		if (bean != null) {
@@ -336,7 +336,7 @@ public class CourseModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("CourseModel search Ended");
+		log.debug("CourseModel search Ended");
 		return list;
 	}
 }

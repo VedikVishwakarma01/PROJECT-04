@@ -37,7 +37,7 @@ public class UserListCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("UserListCtl preload Method Started");
+		log.debug("UserListCtl preload Method Started");
 
 		RoleModel model = new RoleModel();
 
@@ -48,7 +48,7 @@ public class UserListCtl extends BaseCtl {
 			log.error(e);
 			return;
 		}
-		log.info("UserListCtl preload Method Ended");
+		log.debug("UserListCtl preload Method Ended");
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class UserListCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("UserListCtl populateBean Method Started");
+		log.debug("UserListCtl populateBean Method Started");
 
 		UserBean bean = new UserBean();
 
@@ -69,7 +69,7 @@ public class UserListCtl extends BaseCtl {
 		bean.setDob(DataUtility.getDate(request.getParameter("dob")));
 		bean.setGender(DataUtility.getString(request.getParameter("gender")));
 
-		log.info("UserListCtl populateBean Method Ended");
+		log.debug("UserListCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -84,7 +84,7 @@ public class UserListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("UserListCtl doGet Method Started");
+		log.debug("UserListCtl doGet Method Started");
 
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -111,7 +111,7 @@ public class UserListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 		}
 
-		log.info("UserListCtl doGet Method Ended");
+		log.debug("UserListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -127,7 +127,7 @@ public class UserListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("UserListCtl doPost Method Started");
+		log.debug("UserListCtl doPost Method Started");
 
 		List<UserBean> list = null;
 		List<UserBean> next = null;
@@ -191,7 +191,7 @@ public class UserListCtl extends BaseCtl {
 			log.error(e);
 			ServletUtility.handleException(e, request, response);
 		}
-		log.info("UserListCtl doPost Method Ended");
+		log.debug("UserListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

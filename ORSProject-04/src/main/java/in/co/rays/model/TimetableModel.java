@@ -34,7 +34,7 @@ public class TimetableModel {
 	 * @throws ApplicationException if database error occurs
 	 */
 	public int nextPk() throws ApplicationException {
-		log.info("TimetableModel nextPk Started");
+		log.debug("TimetableModel nextPk Started");
 
 		int pk = 0;
 		Connection conn = null;
@@ -51,7 +51,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel nextPk Ended");
+		log.debug("TimetableModel nextPk Ended");
 		return pk + 1;
 	}
 
@@ -63,7 +63,7 @@ public class TimetableModel {
 	 * @throws ApplicationException     if database error occurs
 	 */
 	public void add(TimetableBean bean) throws DuplicateRecordException, ApplicationException {
-		log.info("TimetableModel add Started");
+		log.debug("TimetableModel add Started");
 
 		CourseModel couModel = new CourseModel();
 		CourseBean couBean = couModel.findByPk(bean.getCourseId());
@@ -111,7 +111,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel add Ended");
+		log.debug("TimetableModel add Ended");
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class TimetableModel {
 	 * @throws DuplicateRecordException if duplicate entry is found
 	 */
 	public void update(TimetableBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("TimetableModel update Started");
+		log.debug("TimetableModel update Started");
 
 		CourseModel couModel = new CourseModel();
 		CourseBean couBean = couModel.findByPk(bean.getCourseId());
@@ -168,7 +168,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel update Ended");
+		log.debug("TimetableModel update Ended");
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class TimetableModel {
 	 * @throws ApplicationException if database error occurs
 	 */
 	public void delete(TimetableBean bean) throws ApplicationException {
-		log.info("TimetableModel delete Started");
+		log.debug("TimetableModel delete Started");
 
 		Connection conn = null;
 		try {
@@ -204,7 +204,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel delete Ended");
+		log.debug("TimetableModel delete Ended");
 	}
 
 	/**
@@ -215,7 +215,7 @@ public class TimetableModel {
 	 * @throws ApplicationException if database error occurs
 	 */
 	public TimetableBean findByPk(long id) throws ApplicationException {
-		log.info("TimetableModel findByPk Started");
+		log.debug("TimetableModel findByPk Started");
 
 		TimetableBean bean = null;
 		Connection conn = null;
@@ -250,7 +250,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel findByPk Ended");
+		log.debug("TimetableModel findByPk Ended");
 		return bean;
 	}
 
@@ -263,7 +263,7 @@ public class TimetableModel {
 	 * @throws ApplicationException if database error occurs
 	 */
 	public TimetableBean checkByCourseName(Long courseId, Date examDate) throws ApplicationException {
-		log.info("TimetableModel checkByCourseName Started");
+		log.debug("TimetableModel checkByCourseName Started");
 
 		StringBuffer sql = new StringBuffer("select * from st_timetable where course_id = ? and exam_date = ?");
 		TimetableBean bean = null;
@@ -299,7 +299,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel checkByCourseName Ended");
+		log.debug("TimetableModel checkByCourseName Ended");
 		return bean;
 	}
 
@@ -313,7 +313,7 @@ public class TimetableModel {
 	 * @throws ApplicationException if database error occurs
 	 */
 	public TimetableBean checkBySubjectName(Long courseId, Long subjectId, Date examDate) throws ApplicationException {
-		log.info("TimetableModel checkBySubjectName Started");
+		log.debug("TimetableModel checkBySubjectName Started");
 
 		StringBuffer sql = new StringBuffer(
 				"select * from st_timetable where course_id = ? and subject_id = ? and exam_date = ?");
@@ -351,7 +351,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel checkBySubjectName Ended");
+		log.debug("TimetableModel checkBySubjectName Ended");
 		return bean;
 	}
 
@@ -368,7 +368,7 @@ public class TimetableModel {
 	 */
 	public TimetableBean checkBySemester(Long courseId, Long subjectId, String semester, Date examDate)
 			throws ApplicationException {
-		log.info("TimetableModel checkBySemester Started");
+		log.debug("TimetableModel checkBySemester Started");
 
 		StringBuffer sql = new StringBuffer(
 				"select * from st_timetable where course_id = ? and subject_id = ? and semester = ? and exam_date = ?");
@@ -406,7 +406,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel checkBySemester Ended");
+		log.debug("TimetableModel checkBySemester Ended");
 		return bean;
 	}
 
@@ -424,7 +424,7 @@ public class TimetableModel {
 	 */
 	public TimetableBean checkByExamTime(Long courseId, Long subjectId, String semester, Date examDate, String examTime,
 			String description) throws ApplicationException {
-		log.info("TimetableModel checkByExamTime Started");
+		log.debug("TimetableModel checkByExamTime Started");
 
 		StringBuffer sql = new StringBuffer(
 				"select * from st_timetable where course_id = ? and subject_id = ? and semester = ? and exam_date = ? and exam_time = ? and description = ?");
@@ -464,7 +464,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel checkByExamTime Ended");
+		log.debug("TimetableModel checkByExamTime Ended");
 		return bean;
 	}
 
@@ -475,7 +475,7 @@ public class TimetableModel {
 	 * @throws ApplicationException if database error occurs
 	 */
 	public List<TimetableBean> list() throws ApplicationException {
-		log.info("TimetableModel list Method");
+		log.debug("TimetableModel list Method");
 		return search(null, 0, 0);
 	}
 
@@ -489,7 +489,7 @@ public class TimetableModel {
 	 * @throws ApplicationException if database error occurs
 	 */
 	public List<TimetableBean> search(TimetableBean bean, int pageNo, int pageSize) throws ApplicationException {
-		log.info("TimetableModel search Started");
+		log.debug("TimetableModel search Started");
 
 		StringBuffer sql = new StringBuffer("select * from st_timetable where 1=1");
 
@@ -547,7 +547,7 @@ public class TimetableModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("TimetableModel search Ended");
+		log.debug("TimetableModel search Ended");
 		return list;
 	}
 }

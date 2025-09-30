@@ -30,7 +30,7 @@ public class RoleModel {
      * @throws ApplicationException if any database exception occurs
      */
     public Integer nextPk() throws ApplicationException {
-    	log.info("RoleModel nextPk Started");
+    	log.debug("RoleModel nextPk Started");
     	
     	Connection conn = null;
         int pk = 0;
@@ -48,7 +48,7 @@ public class RoleModel {
         } finally {
             JDBCDataSource.closeConnection(conn);
         }
-        log.info("RoleModel nextPk Ended");
+        log.debug("RoleModel nextPk Ended");
         return pk + 1;
     }
 
@@ -61,7 +61,7 @@ public class RoleModel {
      * @throws DuplicateRecordException if the role already exists
      */
     public long add(RoleBean bean) throws ApplicationException, DuplicateRecordException {
-    	log.info("RoleModel add Started");
+    	log.debug("RoleModel add Started");
     	
     	Connection conn = null;
         int pk = 0;
@@ -98,7 +98,7 @@ public class RoleModel {
         } finally {
             JDBCDataSource.closeConnection(conn);
         }
-        log.info("RoleModel add Ended");
+        log.debug("RoleModel add Ended");
         return pk;
     }
 
@@ -110,7 +110,7 @@ public class RoleModel {
      * @throws DuplicateRecordException if a duplicate role name exists
      */
     public void update(RoleBean bean) throws ApplicationException, DuplicateRecordException {
-    	log.info("RoleModel update Started");
+    	log.debug("RoleModel update Started");
     	
     	Connection conn = null;
 
@@ -145,7 +145,7 @@ public class RoleModel {
         } finally {
             JDBCDataSource.closeConnection(conn);
         }
-        log.info("RoleModel update Ended");
+        log.debug("RoleModel update Ended");
     }
 
     /**
@@ -155,7 +155,7 @@ public class RoleModel {
      * @throws ApplicationException if a database exception occurs
      */
     public void delete(RoleBean bean) throws ApplicationException {
-    	log.info("RoleModel delete Started");
+    	log.debug("RoleModel delete Started");
     	
     	Connection conn = null;
 
@@ -177,7 +177,7 @@ public class RoleModel {
         } finally {
             JDBCDataSource.closeConnection(conn);
         }
-        log.info("RoleModel delete Ended");
+        log.debug("RoleModel delete Ended");
     }
 
     /**
@@ -188,7 +188,7 @@ public class RoleModel {
      * @throws ApplicationException if a database exception occurs
      */
     public RoleBean findByPk(long pk) throws ApplicationException {
-    	log.info("RoleModel findByPk Started");
+    	log.debug("RoleModel findByPk Started");
     	
     	RoleBean bean = null;
         Connection conn = null;
@@ -216,7 +216,7 @@ public class RoleModel {
         } finally {
             JDBCDataSource.closeConnection(conn);
         }
-        log.info("RoleModel findByPk Ended");
+        log.debug("RoleModel findByPk Ended");
         return bean;
     }
 
@@ -228,7 +228,7 @@ public class RoleModel {
      * @throws ApplicationException if a database exception occurs
      */
     public RoleBean findByName(String name) throws ApplicationException {
-    	log.info("RoleModel findbyName Started");
+    	log.debug("RoleModel findbyName Started");
     	
     	StringBuffer sql = new StringBuffer("select * from st_role where name = ?");
         RoleBean bean = null;
@@ -254,7 +254,7 @@ public class RoleModel {
         } finally {
             JDBCDataSource.closeConnection(conn);
         }
-        log.info("RoleModel findbyName Ended");
+        log.debug("RoleModel findbyName Ended");
         return bean;
     }
 
@@ -265,7 +265,7 @@ public class RoleModel {
      * @throws ApplicationException if a database exception occurs
      */
     public List<RoleBean> list() throws ApplicationException {
-    	log.info("RoleModel list Method");
+    	log.debug("RoleModel list Method");
     	return search(null, 0, 0);
     }
 
@@ -279,7 +279,7 @@ public class RoleModel {
      * @throws ApplicationException if a database exception occurs
      */
     public List<RoleBean> search(RoleBean bean, int pageNo, int pageSize) throws ApplicationException {
-    	log.info("RoleModel search Started");
+    	log.debug("RoleModel search Started");
     	
         StringBuffer sql = new StringBuffer("select * from st_role where 1=1");
 
@@ -324,7 +324,7 @@ public class RoleModel {
         } finally {
             JDBCDataSource.closeConnection(conn);
         }
-        log.info("RoleModel search Ended");
+        log.debug("RoleModel search Ended");
         return list;
     }
 }

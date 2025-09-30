@@ -38,7 +38,7 @@ public class SubjectListCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("SubjectListCtl preload Method Started");
+		log.debug("SubjectListCtl preload Method Started");
 		
 		CourseModel courseModel = new CourseModel();
 		SubjectModel subjectModel = new SubjectModel();
@@ -53,7 +53,7 @@ public class SubjectListCtl extends BaseCtl {
 			log.error(e);
 			return;
 		}
-		log.info("SubjectListCtl preload Method Ended");
+		log.debug("SubjectListCtl preload Method Ended");
 	}
 
 	/**
@@ -64,14 +64,14 @@ public class SubjectListCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("SubjectListCtl populateBean Method Started");
+		log.debug("SubjectListCtl populateBean Method Started");
 
 		SubjectBean bean = new SubjectBean();
 
 		bean.setId(DataUtility.getLong(request.getParameter("subjectId")));
 		bean.setCourseId(DataUtility.getLong(request.getParameter("courseId")));
 
-		log.info("SubjectListCtl populateBean Method Ended");
+		log.debug("SubjectListCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -86,7 +86,7 @@ public class SubjectListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("SubjectListCtl doGet Method Started");
+		log.debug("SubjectListCtl doGet Method Started");
 
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -112,7 +112,7 @@ public class SubjectListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 			return;
 		}
-		log.info("SubjectListCtl doGet Method Ended");
+		log.debug("SubjectListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 
 	}
@@ -129,7 +129,7 @@ public class SubjectListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("SubjectListCtl doPost Method Started");
+		log.debug("SubjectListCtl doPost Method Started");
 
 
 		List list = null;
@@ -197,7 +197,7 @@ public class SubjectListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 			return;
 		}
-		log.info("SubjectListCtl doPost Method Ended");
+		log.debug("SubjectListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

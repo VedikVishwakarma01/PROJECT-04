@@ -38,7 +38,7 @@ public class CourseListCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("CourseListCtl preload Method Started");
+		log.debug("CourseListCtl preload Method Started");
 		
 		CourseModel model = new CourseModel();
 
@@ -49,7 +49,7 @@ public class CourseListCtl extends BaseCtl {
 			log.error(e);
 			return;
 		}
-		log.info("CourseListCtl preload Method Ended");
+		log.debug("CourseListCtl preload Method Ended");
 	}
 
 	/**
@@ -60,13 +60,13 @@ public class CourseListCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("CourseListCtl populateBean Method Started");
+		log.debug("CourseListCtl populateBean Method Started");
 		
 		CourseBean bean = new CourseBean();
 
 		bean.setId(DataUtility.getLong(request.getParameter("courseId")));
 
-		log.info("CourseListCtl populateBean Method Ended");
+		log.debug("CourseListCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -82,7 +82,7 @@ public class CourseListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("CourseListCtl doGet Method Started");
+		log.debug("CourseListCtl doGet Method Started");
 		
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -109,7 +109,7 @@ public class CourseListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 			return;
 		}
-		log.info("CourseListCtl doGet Method Ended");
+		log.debug("CourseListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -125,7 +125,7 @@ public class CourseListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("CourseListCtl doPost Method Started");
+		log.debug("CourseListCtl doPost Method Started");
 		
 		List list = null;
 		List next = null;
@@ -198,7 +198,7 @@ public class CourseListCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("CourseListCtl doPost Method Ended");
+		log.debug("CourseListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

@@ -37,7 +37,7 @@ public class StudentListCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("StudentListCtl populateBean Method Started");
+		log.debug("StudentListCtl populateBean Method Started");
 
 		StudentBean bean = new StudentBean();
 
@@ -45,7 +45,7 @@ public class StudentListCtl extends BaseCtl {
 		bean.setLastName(DataUtility.getString(request.getParameter("lastName")));
 		bean.setEmail(DataUtility.getString(request.getParameter("email")));
 
-		log.info("StudentListCtl populateBean Method Ended");
+		log.debug("StudentListCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -60,7 +60,7 @@ public class StudentListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("StudentListCtl doGet Method Started");
+		log.debug("StudentListCtl doGet Method Started");
 
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -88,7 +88,7 @@ public class StudentListCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("StudentListCtl doGet Method Ended");
+		log.debug("StudentListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -104,7 +104,7 @@ public class StudentListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("StudentListCtl doPost Method Started");
+		log.debug("StudentListCtl doPost Method Started");
 
 		List list = null;
 		List next = null;
@@ -172,7 +172,7 @@ public class StudentListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 			return;
 		}
-		log.info("StudentListCtl doPost Method Ended");
+		log.debug("StudentListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

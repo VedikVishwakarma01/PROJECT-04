@@ -40,7 +40,7 @@ public class ChangePasswordCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("ChangePasswordCtl validate Method Started");
+		log.debug("ChangePasswordCtl validate Method Started");
 
 		boolean isValid = true;
 
@@ -80,7 +80,7 @@ public class ChangePasswordCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("ChangePasswordCtl validate Method Ended");
+		log.debug("ChangePasswordCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -92,7 +92,7 @@ public class ChangePasswordCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("ChangePasswordCtl populateBean Method Started");
+		log.debug("ChangePasswordCtl populateBean Method Started");
 
 		UserBean bean = new UserBean();
 
@@ -101,7 +101,7 @@ public class ChangePasswordCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("ChangePasswordCtl populateBean Method Ended");
+		log.debug("ChangePasswordCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -116,11 +116,11 @@ public class ChangePasswordCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("ChangePasswordCtl doGet Method Started");
+		log.debug("ChangePasswordCtl doGet Method Started");
 
 		ServletUtility.forward(getView(), request, response);
 
-		log.info("ChangePasswordCtl doGet Method Ended");
+		log.debug("ChangePasswordCtl doGet Method Ended");
 
 	}
 
@@ -135,7 +135,7 @@ public class ChangePasswordCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("ChangePasswordCtl doPost Method Started");
+		log.debug("ChangePasswordCtl doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 		String newPassword = (String) request.getParameter("newPassword");
@@ -168,7 +168,7 @@ public class ChangePasswordCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.MY_PROFILE_CTL, request, response);
 			return;
 		}
-		log.info("ChangePasswordCtl doPost Method Ended");
+		log.debug("ChangePasswordCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

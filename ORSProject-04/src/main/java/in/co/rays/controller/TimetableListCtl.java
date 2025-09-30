@@ -38,7 +38,7 @@ public class TimetableListCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("TimetableListCtl preload Method Started");
+		log.debug("TimetableListCtl preload Method Started");
 
 		CourseModel courseModel = new CourseModel();
 		TimetableModel timetableModel = new TimetableModel();
@@ -53,7 +53,7 @@ public class TimetableListCtl extends BaseCtl {
 			log.error(e);
 			return;
 		}
-		log.info("TimetableListCtl preload Method Ended");
+		log.debug("TimetableListCtl preload Method Ended");
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class TimetableListCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("TimetableListCtl populateBean Method Started");
+		log.debug("TimetableListCtl populateBean Method Started");
 
 		TimetableBean bean = new TimetableBean();
 
@@ -72,7 +72,7 @@ public class TimetableListCtl extends BaseCtl {
 		bean.setCourseId(DataUtility.getLong(request.getParameter("courseId")));
 		bean.setExamDate(DataUtility.getDate(request.getParameter("examDate")));
 
-		log.info("TimetableListCtl populateBean Method Ended");
+		log.debug("TimetableListCtl populateBean Method Ended");
 		return bean;
 
 	}
@@ -88,7 +88,7 @@ public class TimetableListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("TimetableListCtl doGet Method Started");
+		log.debug("TimetableListCtl doGet Method Started");
 
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -114,7 +114,7 @@ public class TimetableListCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("TimetableListCtl doGet Method Ended");
+		log.debug("TimetableListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -130,7 +130,7 @@ public class TimetableListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("TimetableListCtl doPost Method Started");
+		log.debug("TimetableListCtl doPost Method Started");
 
 		List list = null;
 		List next = null;
@@ -197,7 +197,7 @@ public class TimetableListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 			return;
 		}
-		log.info("TimetableListCtl doPost Method Ended");
+		log.debug("TimetableListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

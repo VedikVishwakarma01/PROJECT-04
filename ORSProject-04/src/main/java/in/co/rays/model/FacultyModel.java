@@ -34,7 +34,7 @@ public class FacultyModel {
 	 * @throws ApplicationException
 	 */
 	public Integer nextPk() throws ApplicationException {
-		log.info("FacultyModel nextPk started");
+		log.debug("FacultyModel nextPk started");
 		int pk = 0;
 		Connection conn = null;
 		try {
@@ -52,7 +52,7 @@ public class FacultyModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("FacultyModel nextPk Ended");
+		log.debug("FacultyModel nextPk Ended");
 		return pk + 1;
 	}
 
@@ -64,7 +64,7 @@ public class FacultyModel {
 	 * @throws DuplicateRecordException if faculty email already exists
 	 */
 	public void add(FacultyBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("FacultyModel add started");
+		log.debug("FacultyModel add started");
 
 		CollegeModel clgModel = new CollegeModel();
 		CollegeBean clgBean = clgModel.findByPk(bean.getCollegeId());
@@ -126,7 +126,7 @@ public class FacultyModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("FacultyModel add Ended");
+		log.debug("FacultyModel add Ended");
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class FacultyModel {
 	 *                                  faculty
 	 */
 	public void update(FacultyBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("FacultyModel update Started");
+		log.debug("FacultyModel update Started");
 
 		CollegeModel clgModel = new CollegeModel();
 		CollegeBean clgBean = clgModel.findByPk(bean.getCollegeId());
@@ -198,7 +198,7 @@ public class FacultyModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("FacultyModel update Ended");
+		log.debug("FacultyModel update Ended");
 	}
 
 	/**
@@ -208,7 +208,7 @@ public class FacultyModel {
 	 * @throws ApplicationException if deletion fails
 	 */
 	public void delete(FacultyBean bean) throws ApplicationException {
-		log.info("FacultyModel delete Started");
+		log.debug("FacultyModel delete Started");
 
 		Connection conn = null;
 		try {
@@ -232,7 +232,7 @@ public class FacultyModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("FacultyModel delete Ended");
+		log.debug("FacultyModel delete Ended");
 	}
 
 	/**
@@ -243,7 +243,7 @@ public class FacultyModel {
 	 * @throws ApplicationException if operation fails
 	 */
 	public FacultyBean findByPk(Long id) throws ApplicationException {
-		log.info("FacultyModel findByPk Started");
+		log.debug("FacultyModel findByPk Started");
 
 		Connection conn = null;
 		FacultyBean bean = null;
@@ -282,7 +282,7 @@ public class FacultyModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("FacultyModel findByPk Ended");
+		log.debug("FacultyModel findByPk Ended");
 		return bean;
 	}
 
@@ -294,7 +294,7 @@ public class FacultyModel {
 	 * @throws ApplicationException if operation fails
 	 */
 	public FacultyBean findByEmail(String email) throws ApplicationException {
-		log.info("FacultyModel findbyEmail Started");
+		log.debug("FacultyModel findbyEmail Started");
 		Connection conn = null;
 		FacultyBean bean = null;
 		try {
@@ -332,7 +332,7 @@ public class FacultyModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("FacultyModel findbyEmail Ended");
+		log.debug("FacultyModel findbyEmail Ended");
 		return bean;
 	}
 
@@ -343,7 +343,7 @@ public class FacultyModel {
 	 * @throws ApplicationException if operation fails
 	 */
 	public List<FacultyBean> list() throws ApplicationException {
-		log.info("FacultyModel list");
+		log.debug("FacultyModel list");
 		return search(null, 0, 0);
 	}
 
@@ -357,7 +357,7 @@ public class FacultyModel {
 	 * @throws ApplicationException if search fails
 	 */
 	public List<FacultyBean> search(FacultyBean bean, int pageNo, int pageSize) throws ApplicationException {
-		log.info("FacultyModel search Started");
+		log.debug("FacultyModel search Started");
 
 		StringBuffer sql = new StringBuffer("select * from st_faculty where 1=1 ");
 
@@ -419,7 +419,7 @@ public class FacultyModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("FacultyModel search Ended");
+		log.debug("FacultyModel search Ended");
 		return list;
 	}
 }

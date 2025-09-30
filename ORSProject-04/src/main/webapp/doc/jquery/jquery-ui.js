@@ -838,7 +838,7 @@ $.position = {
 
 		return ( cachedScrollbarWidth = w1 - w2 );
 	},
-	getScrollInfo: function( within ) {
+	getScrolldebug: function( within ) {
 		var overflowX = within.isWindow || within.isDocument ? "" :
 				within.element.css( "overflow-x" ),
 			overflowY = within.isWindow || within.isDocument ? "" :
@@ -852,7 +852,7 @@ $.position = {
 			height: hasOverflowX ? $.position.scrollbarWidth() : 0
 		};
 	},
-	getWithinInfo: function( element ) {
+	getWithindebug: function( element ) {
 		var withinElement = $( element || window ),
 			isWindow = $.isWindow( withinElement[ 0 ] ),
 			isDocument = !!withinElement[ 0 ] && withinElement[ 0 ].nodeType === 9,
@@ -880,8 +880,8 @@ $.fn.position = function( options ) {
 
 	var atOffset, targetWidth, targetHeight, targetOffset, basePosition, dimensions,
 		target = $( options.of ),
-		within = $.position.getWithinInfo( options.within ),
-		scrollInfo = $.position.getScrollInfo( within ),
+		within = $.position.getWithindebug( options.within ),
+		scrolldebug = $.position.getScrolldebug( within ),
 		collision = ( options.collision || "flip" ).split( " " ),
 		offsets = {};
 
@@ -959,9 +959,9 @@ $.fn.position = function( options ) {
 			marginLeft = parseCss( this, "marginLeft" ),
 			marginTop = parseCss( this, "marginTop" ),
 			collisionWidth = elemWidth + marginLeft + parseCss( this, "marginRight" ) +
-				scrollInfo.width,
+				scrolldebug.width,
 			collisionHeight = elemHeight + marginTop + parseCss( this, "marginBottom" ) +
-				scrollInfo.height,
+				scrolldebug.height,
 			position = $.extend( {}, basePosition ),
 			myOffset = getOffsets( offsets.my, elem.outerWidth(), elem.outerHeight() );
 

@@ -44,7 +44,7 @@ public class TimetableCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("TimetableCtl preload Method Started");
+		log.debug("TimetableCtl preload Method Started");
 
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("1st", "1st");
@@ -72,7 +72,7 @@ public class TimetableCtl extends BaseCtl {
 			log.error(e);
 			return;
 		}
-		log.info("TimetableCtl preload Method Ended");
+		log.debug("TimetableCtl preload Method Ended");
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class TimetableCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("TimetableCtl validate Method Started");
+		log.debug("TimetableCtl validate Method Started");
 
 		boolean isValid = true;
 
@@ -123,7 +123,7 @@ public class TimetableCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("TimetableCtl validate Method Ended");
+		log.debug("TimetableCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -135,7 +135,7 @@ public class TimetableCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("TimetableCtl populateBean Method Started");
+		log.debug("TimetableCtl populateBean Method Started");
 
 		TimetableBean bean = new TimetableBean();
 
@@ -149,7 +149,7 @@ public class TimetableCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("TimetableCtl populateBean Method Ended");
+		log.debug("TimetableCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -164,7 +164,7 @@ public class TimetableCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("TimetableCtl doGet Method Started");
+		log.debug("TimetableCtl doGet Method Started");
 
 		long id = DataUtility.getLong(request.getParameter("id"));
 
@@ -180,7 +180,7 @@ public class TimetableCtl extends BaseCtl {
 				return;
 			}
 		}
-		log.info("TimetableCtl doGet Method Ended");
+		log.debug("TimetableCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -196,7 +196,7 @@ public class TimetableCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("TimetableCtl doPost Method Started");
+		log.debug("TimetableCtl doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -275,7 +275,7 @@ public class TimetableCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.TIMETABLE_CTL, request, response);
 			return;
 		}
-		log.info("TimetableCtl doPost Method Ended");
+		log.debug("TimetableCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

@@ -40,7 +40,7 @@ public class SubjectCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("SubjectCtl preload Method Started");
+		log.debug("SubjectCtl preload Method Started");
 
 		CourseModel model = new CourseModel();
 
@@ -51,7 +51,7 @@ public class SubjectCtl extends BaseCtl {
 			log.error(e);
 			return;
 		}
-		log.info("SubjectCtl preload Method Ended");
+		log.debug("SubjectCtl preload Method Ended");
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class SubjectCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("SubjectCtl validate Method Started");
+		log.debug("SubjectCtl validate Method Started");
 
 		boolean isValid = true;
 
@@ -84,7 +84,7 @@ public class SubjectCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("SubjectCtl validate Method Ended");
+		log.debug("SubjectCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -96,7 +96,7 @@ public class SubjectCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("SubjectCtl populateBean Method Started");
+		log.debug("SubjectCtl populateBean Method Started");
 
 		SubjectBean bean = new SubjectBean();
 
@@ -106,7 +106,7 @@ public class SubjectCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("SubjectCtl populateBean Method Ended");
+		log.debug("SubjectCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -121,7 +121,7 @@ public class SubjectCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("SubjectCtl doGet Method Started");
+		log.debug("SubjectCtl doGet Method Started");
 
 		long id = DataUtility.getLong(request.getParameter("id"));
 
@@ -137,7 +137,7 @@ public class SubjectCtl extends BaseCtl {
 				return;
 			}
 		}
-		log.info("SubjectCtl doGet Method Ended");
+		log.debug("SubjectCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -152,7 +152,7 @@ public class SubjectCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("SubjectCtl doPost Method Started");
+		log.debug("SubjectCtl doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -202,7 +202,7 @@ public class SubjectCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("SubjectCtl doPost Method Ended");
+		log.debug("SubjectCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

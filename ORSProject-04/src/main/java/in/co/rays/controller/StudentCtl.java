@@ -43,7 +43,7 @@ public class StudentCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("StudentCtl preload Method Started");
+		log.debug("StudentCtl preload Method Started");
 		
 		CollegeModel model = new CollegeModel();
 		try {
@@ -52,7 +52,7 @@ public class StudentCtl extends BaseCtl {
 		} catch (ApplicationException e) {
 			log.error(e);
 		}
-		log.info("StudentCtl preload Method Ended");
+		log.debug("StudentCtl preload Method Ended");
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class StudentCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("StudentCtl validate Method Started");
+		log.debug("StudentCtl validate Method Started");
 		
 		boolean isValid = true;
 
@@ -120,7 +120,7 @@ public class StudentCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("StudentCtl validate Method Ended");
+		log.debug("StudentCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -132,7 +132,7 @@ public class StudentCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("StudentCtl populateBean Method Started");
+		log.debug("StudentCtl populateBean Method Started");
 		
 		StudentBean bean = new StudentBean();
 
@@ -147,7 +147,7 @@ public class StudentCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("StudentCtl populateBean Method Ended");
+		log.debug("StudentCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -162,7 +162,7 @@ public class StudentCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("StudentCtl doGet Method Started");
+		log.debug("StudentCtl doGet Method Started");
 		
 		int id = DataUtility.getInt(request.getParameter("id"));
 
@@ -178,7 +178,7 @@ public class StudentCtl extends BaseCtl {
 			}
 		}
 
-		log.info("StudentCtl doGet Method Ended");
+		log.debug("StudentCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -193,7 +193,7 @@ public class StudentCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("StudentCtl doPost Method Started");
+		log.debug("StudentCtl doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -238,7 +238,7 @@ public class StudentCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("StudentCtl doPost Method Ended");
+		log.debug("StudentCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

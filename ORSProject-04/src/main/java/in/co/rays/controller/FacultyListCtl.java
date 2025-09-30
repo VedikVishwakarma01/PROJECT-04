@@ -46,7 +46,7 @@ public class FacultyListCtl extends BaseCtl {
      */
     @Override
     protected BaseBean populateBean(HttpServletRequest request) {
-    	log.info("FacultyListCtl populateBean Method Started");
+    	log.debug("FacultyListCtl populateBean Method Started");
     	
         FacultyBean bean = new FacultyBean();
 
@@ -54,7 +54,7 @@ public class FacultyListCtl extends BaseCtl {
         bean.setLastName(DataUtility.getString(request.getParameter("lastName")));
         bean.setEmail(DataUtility.getString(request.getParameter("email")));
 
-        log.info("FacultyListCtl populateBean Method Ended");
+        log.debug("FacultyListCtl populateBean Method Ended");
         return bean;
     }
 
@@ -69,7 +69,7 @@ public class FacultyListCtl extends BaseCtl {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	log.info("FacultyListCtl doGet Method Started");
+    	log.debug("FacultyListCtl doGet Method Started");
     	
         int pageNo = 1;
         int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -96,7 +96,7 @@ public class FacultyListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
             return;
         }
-        log.info("FacultyListCtl doGet Method Ended");
+        log.debug("FacultyListCtl doGet Method Ended");
         ServletUtility.forward(getView(), request, response);
     }
 
@@ -117,7 +117,7 @@ public class FacultyListCtl extends BaseCtl {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	log.info("FacultyListCtl doPost Method Started");
+    	log.debug("FacultyListCtl doPost Method Started");
     	
     	List<FacultyBean> list = null;
         List<FacultyBean> next = null;
@@ -189,7 +189,7 @@ public class FacultyListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
             return;
         }
-		log.info("FacultyListCtl doPost Method Ended");
+		log.debug("FacultyListCtl doPost Method Ended");
         ServletUtility.forward(getView(), request, response);
     }
 

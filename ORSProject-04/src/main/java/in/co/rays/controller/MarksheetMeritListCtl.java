@@ -39,7 +39,7 @@ public class MarksheetMeritListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("MarksheetMeritListCtl doGet Method Started");
+		log.debug("MarksheetMeritListCtl doGet Method Started");
 		
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -63,7 +63,7 @@ public class MarksheetMeritListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 			return;
 		}
-		log.info("MarksheetMeritListCtl doGet Method Ended");
+		log.debug("MarksheetMeritListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -78,7 +78,7 @@ public class MarksheetMeritListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("MarksheetMeritListCtl doPost Method Started");
+		log.debug("MarksheetMeritListCtl doPost Method Started");
 		
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -86,7 +86,7 @@ public class MarksheetMeritListCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.WELCOME_CTL, request, response);
 			return;
 		}
-		log.info("MarksheetMeritListCtl doPost Method Ended");
+		log.debug("MarksheetMeritListCtl doPost Method Ended");
 	}
 
 	/**

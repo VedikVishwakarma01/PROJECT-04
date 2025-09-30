@@ -37,14 +37,14 @@ public class MarksheetListCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("MarksheetListCtl populateBean Method Started");
+		log.debug("MarksheetListCtl populateBean Method Started");
 		
 		MarksheetBean bean = new MarksheetBean();
 
 		bean.setRollNo(DataUtility.getString(request.getParameter("rollNo")));
 		bean.setName(DataUtility.getString(request.getParameter("name")));
 
-		log.info("MarksheetListCtl populateBean Method Ended");
+		log.debug("MarksheetListCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -58,7 +58,7 @@ public class MarksheetListCtl extends BaseCtl {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("MarksheetListCtl doGet Method Started");
+		log.debug("MarksheetListCtl doGet Method Started");
 		
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -84,7 +84,7 @@ public class MarksheetListCtl extends BaseCtl {
 			log.error(e);
 			ServletUtility.handleException(e, request, response);
 		}
-		log.info("MarksheetListCtl doGet Method Ended");
+		log.debug("MarksheetListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -100,7 +100,7 @@ public class MarksheetListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("MarksheetListCtl doPost Method Started");
+		log.debug("MarksheetListCtl doPost Method Started");
 		
 		List list = null;
 		List next = null;
@@ -173,7 +173,7 @@ public class MarksheetListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 			return;
 		}
-		log.info("MarksheetListCtl doPost Method Ended");
+		log.debug("MarksheetListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

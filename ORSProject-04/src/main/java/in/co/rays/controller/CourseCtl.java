@@ -51,7 +51,7 @@ public class CourseCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("CourseCtl validate Method Started");
+		log.debug("CourseCtl validate Method Started");
 
 		boolean isValid = true;
 
@@ -73,7 +73,7 @@ public class CourseCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("CourseCtl validate Method Ended");
+		log.debug("CourseCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -85,7 +85,7 @@ public class CourseCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("CourseCtl populateBean Method Started");
+		log.debug("CourseCtl populateBean Method Started");
 
 		CourseBean bean = new CourseBean();
 
@@ -96,7 +96,7 @@ public class CourseCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("CourseCtl populateBean Method Ended");
+		log.debug("CourseCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -115,7 +115,7 @@ public class CourseCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("CourseCtl doGet Method Started");
+		log.debug("CourseCtl doGet Method Started");
 
 		CourseModel model = new CourseModel();
 		long id = DataUtility.getLong(request.getParameter("id"));
@@ -131,7 +131,7 @@ public class CourseCtl extends BaseCtl {
 			}
 		}
 
-		log.info("CourseCtl doGet Method Ended");
+		log.debug("CourseCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -155,7 +155,7 @@ public class CourseCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("CourseCtl doPost Method Started");
+		log.debug("CourseCtl doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 		CourseModel model = new CourseModel();
@@ -202,7 +202,7 @@ public class CourseCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("CourseCtl doPost Method Ended");
+		log.debug("CourseCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

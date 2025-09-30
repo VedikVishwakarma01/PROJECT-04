@@ -42,7 +42,7 @@ public class UserRegistrationCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("UserRegistrationCtl validate Method Started");
+		log.debug("UserRegistrationCtl validate Method Started");
 
 		boolean isValid = true;
 
@@ -115,7 +115,7 @@ public class UserRegistrationCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("UserRegistrationCtl validate Method Ended");
+		log.debug("UserRegistrationCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -127,7 +127,7 @@ public class UserRegistrationCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("UserRegistrationCtl populateBean Method Started");
+		log.debug("UserRegistrationCtl populateBean Method Started");
 
 		UserBean bean = new UserBean();
 
@@ -144,7 +144,7 @@ public class UserRegistrationCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("UserRegistrationCtl populateBean Method Ended");
+		log.debug("UserRegistrationCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -157,11 +157,11 @@ public class UserRegistrationCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("UserRegistrationCtl doGet Method Started");
+		log.debug("UserRegistrationCtl doGet Method Started");
 
 		ServletUtility.forward(getView(), request, response);
 
-		log.info("UserRegistrationCtl doGet Method Ended");
+		log.debug("UserRegistrationCtl doGet Method Ended");
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class UserRegistrationCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("UserRegistrationCtl doPost Method Started");
+		log.debug("UserRegistrationCtl doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -200,7 +200,7 @@ public class UserRegistrationCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.USER_REGISTRATION_CTL, request, response);
 			return;
 		}
-		log.info("UserRegistrationCtl doPost Method Ended");
+		log.debug("UserRegistrationCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

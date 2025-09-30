@@ -43,7 +43,7 @@ public class LoginCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("LoginCtl validate Method Started");
+		log.debug("LoginCtl validate Method Started");
 		boolean pass = true;
 
 		String op = request.getParameter("operation");
@@ -64,7 +64,7 @@ public class LoginCtl extends BaseCtl {
 			request.setAttribute("password", PropertyReader.getValue("error.require", "Password"));
 			pass = false;
 		}
-		log.info("LoginCtl validate Method Ended");
+		log.debug("LoginCtl validate Method Ended");
 		return pass;
 	}
 
@@ -77,14 +77,14 @@ public class LoginCtl extends BaseCtl {
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
 
-		log.info("LoginCtl populateBean Method Started");
+		log.debug("LoginCtl populateBean Method Started");
 
 		UserBean bean = new UserBean();
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setLogin(DataUtility.getString(request.getParameter("login")));
 		bean.setPassword(DataUtility.getString(request.getParameter("password")));
 
-		log.info("LoginCtl populateBean Method Ended");
+		log.debug("LoginCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -99,7 +99,7 @@ public class LoginCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("LoginCtl doGet Method Started");
+		log.debug("LoginCtl doGet Method Started");
 
 		HttpSession session = request.getSession();
 
@@ -111,7 +111,7 @@ public class LoginCtl extends BaseCtl {
 			ServletUtility.forward(getView(), request, response);
 			return;
 		}
-		log.info("LoginCtl doGet Method Ended");
+		log.debug("LoginCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -126,7 +126,7 @@ public class LoginCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("LoginCtl doPost Method Started");
+		log.debug("LoginCtl doPost Method Started");
 
 		HttpSession session = request.getSession();
 
@@ -177,7 +177,7 @@ public class LoginCtl extends BaseCtl {
 
 		}
 
-		log.info("LoginCtl doPost Method Ended");
+		log.debug("LoginCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

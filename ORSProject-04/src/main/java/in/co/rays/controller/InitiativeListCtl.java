@@ -40,7 +40,7 @@ public class InitiativeListCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("InitiativeListCtl preload Method Started");
+		log.debug("InitiativeListCtl preload Method Started");
 
 		InitiativeModel model = new InitiativeModel();
 		try {
@@ -58,7 +58,7 @@ public class InitiativeListCtl extends BaseCtl {
 		} catch (ApplicationException e) {
 			log.error(e);
 		}
-		log.info("InitiativeListCtl preload Method Ended");
+		log.debug("InitiativeListCtl preload Method Ended");
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class InitiativeListCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("InitiativeListCtl populateBean Method Started");
+		log.debug("InitiativeListCtl populateBean Method Started");
 
 		InitiativeBean bean = new InitiativeBean();
 
@@ -77,7 +77,7 @@ public class InitiativeListCtl extends BaseCtl {
 		bean.setType(DataUtility.getString(request.getParameter("type")));
 		bean.setVersion(DataUtility.getInt(request.getParameter("version")));
 
-		log.info("InitiativeListCtl populateBean Method Ended");
+		log.debug("InitiativeListCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -92,7 +92,7 @@ public class InitiativeListCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("InitiativeListCtl doGet Method Started");
+		log.debug("InitiativeListCtl doGet Method Started");
 
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -119,7 +119,7 @@ public class InitiativeListCtl extends BaseCtl {
 			ServletUtility.handleException(e, request, response);
 		}
 
-		log.info("InitiativeListCtl doGet Method Ended");
+		log.debug("InitiativeListCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -135,7 +135,7 @@ public class InitiativeListCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("InitiativeListCtl doPost Method Started");
+		log.debug("InitiativeListCtl doPost Method Started");
 
 		List<InitiativeBean> list = null;
 		List<InitiativeBean> next = null;
@@ -199,7 +199,7 @@ public class InitiativeListCtl extends BaseCtl {
 			log.error(e);
 			ServletUtility.handleException(e, request, response);
 		}
-		log.info("InitiativeListCtl doPost Method Ended");
+		log.debug("InitiativeListCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

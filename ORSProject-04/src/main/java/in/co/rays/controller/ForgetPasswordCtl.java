@@ -45,7 +45,7 @@ public class ForgetPasswordCtl extends BaseCtl {
      */
     @Override
     protected boolean validate(HttpServletRequest request) {
-    	log.info("ForgetPasswordCtl validate Method Started");
+    	log.debug("ForgetPasswordCtl validate Method Started");
     	
         boolean isValid = true;
 
@@ -57,7 +57,7 @@ public class ForgetPasswordCtl extends BaseCtl {
             isValid = false;
         }
 
-        log.info("ForgetPasswordCtl validate Method Ended");
+        log.debug("ForgetPasswordCtl validate Method Ended");
         return isValid;
     }
 
@@ -69,13 +69,13 @@ public class ForgetPasswordCtl extends BaseCtl {
      */
     @Override
     protected BaseBean populateBean(HttpServletRequest request) {
-    	log.info("ForgetPasswordCtl populateBean Method Started");
+    	log.debug("ForgetPasswordCtl populateBean Method Started");
     	
         UserBean bean = new UserBean();
 
         bean.setLogin(DataUtility.getString(request.getParameter("login")));
 
-        log.info("ForgetPasswordCtl populateBean Method Ended");
+        log.debug("ForgetPasswordCtl populateBean Method Ended");
         return bean;
     }
 
@@ -90,11 +90,11 @@ public class ForgetPasswordCtl extends BaseCtl {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	log.info("ForgetPasswordCtl doGet Method Started");
+    	log.debug("ForgetPasswordCtl doGet Method Started");
     	
     	ServletUtility.forward(getView(), request, response);
 
-    	log.info("ForgetPasswordCtl doGet Method Ended");
+    	log.debug("ForgetPasswordCtl doGet Method Ended");
     }
 
     /**
@@ -109,7 +109,7 @@ public class ForgetPasswordCtl extends BaseCtl {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	log.info("ForgetPasswordCtl doPost Method Started");
+    	log.debug("ForgetPasswordCtl doPost Method Started");
     	
         String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -130,7 +130,7 @@ public class ForgetPasswordCtl extends BaseCtl {
 				ServletUtility.handleException(e, request, response);         
 				}
         }
-        log.info("ForgetPasswordCtl doPost Method Ended");
+        log.debug("ForgetPasswordCtl doPost Method Ended");
         ServletUtility.forward(getView(), request, response);
     }
 

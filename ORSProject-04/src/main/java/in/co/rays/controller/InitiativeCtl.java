@@ -38,7 +38,7 @@ public class InitiativeCtl extends BaseCtl {
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
-		log.info("Initiative preload Method Started");
+		log.debug("Initiative preload Method Started");
 
 		InitiativeModel model = new InitiativeModel();
 		try {
@@ -47,7 +47,7 @@ public class InitiativeCtl extends BaseCtl {
 		} catch (ApplicationException e) {
 			log.error(e);
 		}
-		log.info("Initiative preload Method Ended");
+		log.debug("Initiative preload Method Ended");
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class InitiativeCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("Initiative validate Method Started");
+		log.debug("Initiative validate Method Started");
 
 		boolean isValid = true;
 
@@ -94,7 +94,7 @@ public class InitiativeCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("Initiative validate Method Ended");
+		log.debug("Initiative validate Method Ended");
 		return isValid;
 	}
 
@@ -106,7 +106,7 @@ public class InitiativeCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("Initiative populateBean Method Started");
+		log.debug("Initiative populateBean Method Started");
 
 		InitiativeBean bean = new InitiativeBean();
 
@@ -118,7 +118,7 @@ public class InitiativeCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("Initiative populateBean Method Ended");
+		log.debug("Initiative populateBean Method Ended");
 		return bean;
 	}
 
@@ -133,7 +133,7 @@ public class InitiativeCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("Initiative doGet Method Started");
+		log.debug("Initiative doGet Method Started");
 
 		long id = DataUtility.getLong(request.getParameter("id"));
 
@@ -151,7 +151,7 @@ public class InitiativeCtl extends BaseCtl {
 			}
 		}
 
-		log.info("Initiative doGet Method Ended");
+		log.debug("Initiative doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -166,7 +166,7 @@ public class InitiativeCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("Initiative doPost Method Started");
+		log.debug("Initiative doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -210,7 +210,7 @@ public class InitiativeCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("UseInitiativerCtl doPost Method Ended");
+		log.debug("UseInitiativerCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

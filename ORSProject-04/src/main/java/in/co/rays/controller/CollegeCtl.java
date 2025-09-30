@@ -38,7 +38,7 @@ public class CollegeCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("CollegeCtl validate Method Started");
+		log.debug("CollegeCtl validate Method Started");
 
 		boolean isValid = true;
 
@@ -82,7 +82,7 @@ public class CollegeCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("CollegeCtl validate Method Ended");
+		log.debug("CollegeCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -94,7 +94,7 @@ public class CollegeCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("CollegeCtl populateBean Method Started");
+		log.debug("CollegeCtl populateBean Method Started");
 
 		CollegeBean bean = new CollegeBean();
 
@@ -107,7 +107,7 @@ public class CollegeCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("CollegeCtl populateBean Method Ended");
+		log.debug("CollegeCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -120,7 +120,7 @@ public class CollegeCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("CollegeCtl doGet Method Started");
+		log.debug("CollegeCtl doGet Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -139,7 +139,7 @@ public class CollegeCtl extends BaseCtl {
 			}
 		}
 
-		log.info("CollegeCtl doGet Method Ended");
+		log.debug("CollegeCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -152,7 +152,7 @@ public class CollegeCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("CollegeCtl doPost Method Started");
+		log.debug("CollegeCtl doPost Method Started");
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -203,7 +203,7 @@ public class CollegeCtl extends BaseCtl {
 			return;
 		}
 
-		log.info("CollegeCtl doPost Method Ended");
+		log.debug("CollegeCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

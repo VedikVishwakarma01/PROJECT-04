@@ -32,7 +32,7 @@ public class SubjectModel {
 	 * @throws ApplicationException if a database error occurs
 	 */
 	public Integer nextPk() throws ApplicationException {
-		log.info("SubjectModel nextPk Started");
+		log.debug("SubjectModel nextPk Started");
 
 		int pk = 0;
 		Connection conn = null;
@@ -50,7 +50,7 @@ public class SubjectModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("SubjectModel nextPk Ended");
+		log.debug("SubjectModel nextPk Ended");
 		return pk + 1;
 	}
 
@@ -63,7 +63,7 @@ public class SubjectModel {
 	 * @throws DuplicateRecordException if subject name already exists
 	 */
 	public Long add(SubjectBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("SubjectModel add Started");
+		log.debug("SubjectModel add Started");
 
 		CourseModel courseModel = new CourseModel();
 		CourseBean courseBean = courseModel.findByPk(bean.getCourseId());
@@ -108,7 +108,7 @@ public class SubjectModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("SubjectModel add Ended");
+		log.debug("SubjectModel add Ended");
 		return pk;
 	}
 
@@ -120,7 +120,7 @@ public class SubjectModel {
 	 * @throws DuplicateRecordException if duplicate subject name exists
 	 */
 	public void update(SubjectBean bean) throws ApplicationException, DuplicateRecordException {
-		log.info("SubjectModel update Started");
+		log.debug("SubjectModel update Started");
 
 		CourseModel cModel = new CourseModel();
 		CourseBean cBean = cModel.findByPk(bean.getCourseId());
@@ -164,7 +164,7 @@ public class SubjectModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("SubjectModel update Ended");
+		log.debug("SubjectModel update Ended");
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class SubjectModel {
 	 * @throws ApplicationException if a database error occurs
 	 */
 	public void delete(SubjectBean bean) throws ApplicationException {
-		log.info("SubjectModel delete Started");
+		log.debug("SubjectModel delete Started");
 
 		Connection conn = null;
 		try {
@@ -198,7 +198,7 @@ public class SubjectModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("SubjectModel delete Ended");
+		log.debug("SubjectModel delete Ended");
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class SubjectModel {
 	 * @throws ApplicationException if a database error occurs
 	 */
 	public SubjectBean findByPk(Long id) throws ApplicationException {
-		log.info("SubjectModel findByPk Started");
+		log.debug("SubjectModel findByPk Started");
 
 		Connection conn = null;
 		SubjectBean bean = null;
@@ -240,7 +240,7 @@ public class SubjectModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("SubjectModel findByPk Ended");
+		log.debug("SubjectModel findByPk Ended");
 		return bean;
 	}
 
@@ -252,7 +252,7 @@ public class SubjectModel {
 	 * @throws ApplicationException if a database error occurs
 	 */
 	public SubjectBean findByName(String name) throws ApplicationException {
-		log.info("SubjectModel findbyName Started");
+		log.debug("SubjectModel findbyName Started");
 
 		Connection conn = null;
 		SubjectBean bean = null;
@@ -283,7 +283,7 @@ public class SubjectModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("SubjectModel findbyName Ended");
+		log.debug("SubjectModel findbyName Ended");
 		return bean;
 	}
 
@@ -294,7 +294,7 @@ public class SubjectModel {
 	 * @throws ApplicationException if a database error occurs
 	 */
 	public List<SubjectBean> list() throws ApplicationException {
-		log.info("SubjectModel list Method");
+		log.debug("SubjectModel list Method");
 		return search(null, 0, 0);
 	}
 
@@ -308,7 +308,7 @@ public class SubjectModel {
 	 * @throws ApplicationException if a database error occurs
 	 */
 	public List<SubjectBean> search(SubjectBean bean, int pageNo, int pageSize) throws ApplicationException {
-		log.info("SubjectModel search Started");
+		log.debug("SubjectModel search Started");
 
 		StringBuffer sql = new StringBuffer("select * from st_subject where 1=1 ");
 
@@ -358,7 +358,7 @@ public class SubjectModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		log.info("SubjectModel search Ended");
+		log.debug("SubjectModel search Ended");
 		return list;
 	}
 }

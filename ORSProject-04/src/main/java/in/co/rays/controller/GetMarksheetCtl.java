@@ -37,7 +37,7 @@ public class GetMarksheetCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("GetMarksheetCtl validate Method Started");
+		log.debug("GetMarksheetCtl validate Method Started");
 		
 		boolean isValid = true;
 
@@ -45,7 +45,7 @@ public class GetMarksheetCtl extends BaseCtl {
 			request.setAttribute("rollNo", PropertyReader.getValue("error.require", "Roll No"));
 			isValid = false;
 		}
-		log.info("GetMarksheetCtl validate Method Ended");
+		log.debug("GetMarksheetCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -57,13 +57,13 @@ public class GetMarksheetCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("GetMarksheetCtl populateBean Method Started");
+		log.debug("GetMarksheetCtl populateBean Method Started");
 		
 		MarksheetBean bean = new MarksheetBean();
 
 		bean.setRollNo(DataUtility.getString(request.getParameter("rollNo")));
 
-		log.info("GetMarksheetCtl populateBean Method Ended");
+		log.debug("GetMarksheetCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -78,9 +78,9 @@ public class GetMarksheetCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("GetMarksheetCtl doGet Method Started");
+		log.debug("GetMarksheetCtl doGet Method Started");
 		ServletUtility.forward(getView(), request, response);
-		log.info("GetMarksheetCtl doGet Method Ended");
+		log.debug("GetMarksheetCtl doGet Method Ended");
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class GetMarksheetCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("GetMarksheetCtl doPost Method Started");
+		log.debug("GetMarksheetCtl doPost Method Started");
 		
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -116,7 +116,7 @@ public class GetMarksheetCtl extends BaseCtl {
 				return;
 			}
 		}
-		log.info("GetMarksheetCtl doPost Method Ended");
+		log.debug("GetMarksheetCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 

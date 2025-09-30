@@ -39,7 +39,7 @@ public class RoleCtl extends BaseCtl {
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		log.info("RoleCtl validate Method Started");
+		log.debug("RoleCtl validate Method Started");
 		
 		boolean isValid = true;
 
@@ -56,7 +56,7 @@ public class RoleCtl extends BaseCtl {
 			isValid = false;
 		}
 
-		log.info("RoleCtl validate Method Ended");
+		log.debug("RoleCtl validate Method Ended");
 		return isValid;
 	}
 
@@ -68,7 +68,7 @@ public class RoleCtl extends BaseCtl {
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
-		log.info("RoleCtl populateBean Method Started");
+		log.debug("RoleCtl populateBean Method Started");
 		
 		RoleBean bean = new RoleBean();
 
@@ -78,7 +78,7 @@ public class RoleCtl extends BaseCtl {
 
 		populateDTO(bean, request);
 
-		log.info("RoleCtl populateBean Method Ended");
+		log.debug("RoleCtl populateBean Method Ended");
 		return bean;
 	}
 
@@ -93,7 +93,7 @@ public class RoleCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("RoleCtl doGet Method Started");
+		log.debug("RoleCtl doGet Method Started");
 		
 		RoleModel model = new RoleModel();
 
@@ -111,7 +111,7 @@ public class RoleCtl extends BaseCtl {
 			}
 		}
 
-		log.info("RoleCtl doGet Method Ended");
+		log.debug("RoleCtl doGet Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
@@ -127,7 +127,7 @@ public class RoleCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		log.info("RoleCtl doPost Method Started");
+		log.debug("RoleCtl doPost Method Started");
 		
 		String op = DataUtility.getString(request.getParameter("operation"));
 
@@ -175,7 +175,7 @@ public class RoleCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.ROLE_LIST_CTL, request, response);
 			return;
 		}
-		log.info("RoleCtl doPost Method Ended");
+		log.debug("RoleCtl doPost Method Ended");
 		ServletUtility.forward(getView(), request, response);
 	}
 
